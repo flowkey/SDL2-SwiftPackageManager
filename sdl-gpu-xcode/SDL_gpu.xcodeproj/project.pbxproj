@@ -1,0 +1,1621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		854DDECD0EA84F389817DE73 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A1577804C70344DB8DBE90FC /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				B4F07508365A4A31952B38BA /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		B4D599A5399941FDB8E16A3C /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C330A642B9834925A4B3B8C8 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				599AF430277946D4ABE0DB83 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				DE4A670B30D543F291CCBB6B /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		DA0C64524F904DEE8D78BB1E /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3AD07D269F7D48B885A3BA01 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				6B452928A9344CB8B279B7FB /* CMake Rules */,
+			);
+			dependencies = (
+				D91CCA867492411889766854 /* PBXTargetDependency */,
+				2BFC0357E047440EB6B48E7B /* PBXTargetDependency */,
+				7854E9DE04D8439AB4F7555F /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0359F6ADDD1C45C39ED03699 /* SDL_gpu_GLES_3.h in Headers */ = {isa = PBXBuildFile; fileRef = EB7223D6E3ED4E4D880056AF /* SDL_gpu_GLES_3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C989EB3FD544A979AB9AC12 /* SDL_gpu_GLES_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 40ECF4B5B6844F42B86039D9 /* SDL_gpu_GLES_1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D2C80EB7E04479EA5D7D9B1 /* stb_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E9BF0298E1F43B29031371A /* stb_image.h */; };
+		1E171DDEB9C34393B884FC33 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = 97432B84C6BA4E0998A05F22 /* glew.c */; };
+		3F69C87432BF448BB438114D /* SDL_gpu.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3E31384D1C44B090DBD2D0 /* SDL_gpu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4261C9F739B24BEC8AED7385 /* glew.h in Headers */ = {isa = PBXBuildFile; fileRef = 199375524D614B4BB52FBC7B /* glew.h */; };
+		4BA324F8797445F9A75710C6 /* renderer_OpenGL_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA2BA3956C480D916B90B4 /* renderer_OpenGL_1.c */; };
+		4DF254B4975F492E87AE994A /* renderer_OpenGL_3.c in Sources */ = {isa = PBXBuildFile; fileRef = F68CE292E08E4999B68236A4 /* renderer_OpenGL_3.c */; };
+		4E115558439B4E119ADEE601 /* renderer_OpenGL_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 87CC050C1C3D4EA7B26C4E0B /* renderer_OpenGL_4.c */; };
+		5BEFC006C8C54DC29E889E27 /* SDL_gpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 4BC381A2D5474130B62C2800 /* SDL_gpu.c */; };
+		5C6F31881E5F432AA180B6C1 /* renderer_GLES_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 1911BCD8416D44B5AFD4A47E /* renderer_GLES_2.c */; };
+		5E714AF3E4534ED4B8DCDD10 /* SDL_gpu_shapes.c in Sources */ = {isa = PBXBuildFile; fileRef = 870CC56695AD4153873ACC1C /* SDL_gpu_shapes.c */; };
+		600B1842713F440CBD9E385B /* SDL_gpu_OpenGL_4.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0EE7960B8245EDBB44124E /* SDL_gpu_OpenGL_4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3789D828DF4FE79D8639A7 /* SDL_gpu_GLES_2.h in Headers */ = {isa = PBXBuildFile; fileRef = 882F29247F77443F99A2CAAB /* SDL_gpu_GLES_2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E1E8BADBE6D42178A463694 /* renderer_OpenGL_4.c in Sources */ = {isa = PBXBuildFile; fileRef = 0D6A46B82D344B7A8F05D8B0 /* renderer_OpenGL_4.c */; };
+		71F57A9F8A28420C8DF2CE20 /* wglew.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A1217A83444FBA92D4828E /* wglew.h */; };
+		761AA4E4976D4D7D9E4F27DB /* SDL_gpu_renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = 06B91E3209D94D8FAB36CF8F /* SDL_gpu_renderer.c */; };
+		798A045556864E9FBAEC2F3A /* SDL_gpu_renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = 02927EC5D73749A1BE3F0CEE /* SDL_gpu_renderer.c */; };
+		7BEB42EAA2D54E3CAB462B8B /* stb_image_write.h in Headers */ = {isa = PBXBuildFile; fileRef = 202C64A201034B4A8CEA12B5 /* stb_image_write.h */; };
+		864DACF9B10B4249B611D3BA /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = D5AF0B31443C422CA7A40B57 /* stb_image_write.c */; };
+		92451C953C98471C801FE653 /* renderer_GLES_1.c in Sources */ = {isa = PBXBuildFile; fileRef = DF1093D37C064D30BD395B50 /* renderer_GLES_1.c */; };
+		945ED752CA054D9BA9C53112 /* stb_image_write.c in Sources */ = {isa = PBXBuildFile; fileRef = 31F2E44C646E4AA9982BBF1E /* stb_image_write.c */; };
+		94EE696655F44D2A88103497 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = 9630DBDF9AD4421BAA96CBE4 /* glew.c */; };
+		9A47516FAF284A578044C20F /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 21A63CAB72234F30ADE9BB1D /* stb_image.c */; };
+		9B3611AC47C443D982B38E6B /* SDL_gpu_shapes.c in Sources */ = {isa = PBXBuildFile; fileRef = 3FAEDD9A0EDF40D5A471BBB5 /* SDL_gpu_shapes.c */; };
+		9E10C5CC08154C6B9BB22854 /* SDL_gpu_matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 398D386A47244E1CA690AD9C /* SDL_gpu_matrix.c */; };
+		A83204FEFDD6471481712D6E /* renderer_GLES_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C3047C0FDDA4CFAA2C55673 /* renderer_GLES_3.c */; };
+		AB5295AA2B1C409BBE88A9F1 /* SDL_gpu_RendererImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 124CF437863C4FEB85BDFF90 /* SDL_gpu_RendererImpl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACA759581BEB46E2987798AB /* glxew.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A7D8FB193C4948B9C49E8E /* glxew.h */; };
+		BE859D8F117341B392AE4C1F /* renderer_OpenGL_1_BASE.c in Sources */ = {isa = PBXBuildFile; fileRef = 60F6840D7BBB49BB8D5C2EC2 /* renderer_OpenGL_1_BASE.c */; };
+		C552F1C8BF0942B7AC985E52 /* renderer_GLES_3.c in Sources */ = {isa = PBXBuildFile; fileRef = E0971849EC8E4C7BA82E91FE /* renderer_GLES_3.c */; };
+		C95B7DBEA3044C2FA43987A1 /* renderer_OpenGL_3.c in Sources */ = {isa = PBXBuildFile; fileRef = C509E341A9BA4D1A909F897F /* renderer_OpenGL_3.c */; };
+		CB42DBEEBB0542F09730B867 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = D841AA1050EE4D8BADE4767B /* stb_image.c */; };
+		D03AF0295C8B4786B0BA581C /* SDL_gpu_OpenGL_1_BASE.h in Headers */ = {isa = PBXBuildFile; fileRef = 64C00DCB3EEE4B7C8CCC704C /* SDL_gpu_OpenGL_1_BASE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D618CCDCD89D4044A8B593A6 /* renderer_OpenGL_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 167AC47D184A46339624ACB6 /* renderer_OpenGL_2.c */; };
+		DCA34CFDD13C4552B82FA686 /* renderer_OpenGL_1_BASE.c in Sources */ = {isa = PBXBuildFile; fileRef = 67B8AABBA8DC4BB087BE87EB /* renderer_OpenGL_1_BASE.c */; };
+		DDA7057BFB4540E6B05AB0D7 /* renderer_GLES_2.c in Sources */ = {isa = PBXBuildFile; fileRef = AF5E2EF6B67C470EBB7B6C44 /* renderer_GLES_2.c */; };
+		E3B84DC3B9B3481B8DB306C0 /* SDL_gpu_OpenGL_3.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A2A4825DAC476499D59C78 /* SDL_gpu_OpenGL_3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5C681E17AA54B0C813FD44B /* renderer_GLES_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C40611DD51242FAAD95A441 /* renderer_GLES_1.c */; };
+		EA4F2C7C7E064827BD0F6486 /* renderer_OpenGL_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 9EF4DA49419B4834AA8851BC /* renderer_OpenGL_1.c */; };
+		F2C4C8A97B1A467CA035C40D /* SDL_gpu.c in Sources */ = {isa = PBXBuildFile; fileRef = 5359396A1B734FC0B010EC2B /* SDL_gpu.c */; };
+		F59F116CE2334395A97702B6 /* SDL_gpu_matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BCEC7A5B2F0406B99919F43 /* SDL_gpu_matrix.c */; };
+		F8A41FC674E84F04BEE6021F /* SDL_gpu_OpenGL_1.h in Headers */ = {isa = PBXBuildFile; fileRef = 61D094850F194ABCBA658E8A /* SDL_gpu_OpenGL_1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA2D0052E29443D881A39028 /* renderer_OpenGL_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 38074617F6DB41A4863223FC /* renderer_OpenGL_2.c */; };
+		FB8AB153A51649BFB1A00E44 /* SDL_gpu_OpenGL_2.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6A4F69352041A7A5BCA224 /* SDL_gpu_OpenGL_2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		140D503AD3534F16B4BE82D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B2F8FC196B540D6BB046C93;
+			remoteInfo = SDL_gpu;
+		};
+		86C17024872A48EC8657DFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C98DD690F0DE4E13B6920BFF;
+			remoteInfo = SDL_gpu_shared;
+		};
+		CD3F302BADDB4DD4B3C300C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA0C64524F904DEE8D78BB1E;
+			remoteInfo = ALL_BUILD;
+		};
+		D325D806F2FC48F4B0495251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 854DDECD0EA84F389817DE73;
+			remoteInfo = ZERO_CHECK;
+		};
+		DD92CB15263445E6BBDA0F68 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 854DDECD0EA84F389817DE73;
+			remoteInfo = ZERO_CHECK;
+		};
+		F95707C9652346C095DB5F3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 520F4C2F93D946C798CDC020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 854DDECD0EA84F389817DE73;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0152B70F250F4D709BD4BD19 /* SDL_gpu_RendererImpl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_RendererImpl.h; path = include/SDL_gpu_RendererImpl.h; sourceTree = SOURCE_ROOT; };
+		02927EC5D73749A1BE3F0CEE /* SDL_gpu_renderer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_renderer.c; path = src/SDL_gpu_renderer.c; sourceTree = SOURCE_ROOT; };
+		06B91E3209D94D8FAB36CF8F /* SDL_gpu_renderer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_renderer.c; path = src/SDL_gpu_renderer.c; sourceTree = SOURCE_ROOT; };
+		0903CBE3CD5F4DB4BEFBB454 /* SDL_gpu_OpenGL_1.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_1.h; path = include/SDL_gpu_OpenGL_1.h; sourceTree = SOURCE_ROOT; };
+		0D6A46B82D344B7A8F05D8B0 /* renderer_OpenGL_4.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_4.c; path = src/renderer_OpenGL_4.c; sourceTree = SOURCE_ROOT; };
+		124CF437863C4FEB85BDFF90 /* SDL_gpu_RendererImpl.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_RendererImpl.h; path = include/SDL_gpu_RendererImpl.h; sourceTree = SOURCE_ROOT; };
+		167AC47D184A46339624ACB6 /* renderer_OpenGL_2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_2.c; path = src/renderer_OpenGL_2.c; sourceTree = SOURCE_ROOT; };
+		1911BCD8416D44B5AFD4A47E /* renderer_GLES_2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_2.c; path = src/renderer_GLES_2.c; sourceTree = SOURCE_ROOT; };
+		19933ED9B4454EA7AF24D164 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		199375524D614B4BB52FBC7B /* glew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glew.h; path = src/externals/glew/GL/glew.h; sourceTree = SOURCE_ROOT; };
+		1D0EE7960B8245EDBB44124E /* SDL_gpu_OpenGL_4.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_4.h; path = include/SDL_gpu_OpenGL_4.h; sourceTree = SOURCE_ROOT; };
+		1FEA524360C44C30894EC69E /* SDL_gpu_OpenGL_1_BASE.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_1_BASE.h; path = include/SDL_gpu_OpenGL_1_BASE.h; sourceTree = SOURCE_ROOT; };
+		202C64A201034B4A8CEA12B5 /* stb_image_write.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image_write.h; path = src/externals/stb_image_write/stb_image_write.h; sourceTree = SOURCE_ROOT; };
+		21A63CAB72234F30ADE9BB1D /* stb_image.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stb_image.c; path = src/externals/stb_image/stb_image.c; sourceTree = SOURCE_ROOT; };
+		23A7D8FB193C4948B9C49E8E /* glxew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glxew.h; path = src/externals/glew/GL/glxew.h; sourceTree = SOURCE_ROOT; };
+		26C883969C584A20B7E3268B /* renderer_GL_common.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = renderer_GL_common.inl; path = src/renderer_GL_common.inl; sourceTree = SOURCE_ROOT; };
+		2A19E7D78F5F46B3950806CF /* renderer_GL_common.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = renderer_GL_common.inl; path = src/renderer_GL_common.inl; sourceTree = SOURCE_ROOT; };
+		2BCEC7A5B2F0406B99919F43 /* SDL_gpu_matrix.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_matrix.c; path = src/SDL_gpu_matrix.c; sourceTree = SOURCE_ROOT; };
+		2CC078D9CB1E4A72955A0440 /* glxew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glxew.h; path = src/externals/glew/GL/glxew.h; sourceTree = SOURCE_ROOT; };
+		31F2E44C646E4AA9982BBF1E /* stb_image_write.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stb_image_write.c; path = src/externals/stb_image_write/stb_image_write.c; sourceTree = SOURCE_ROOT; };
+		38074617F6DB41A4863223FC /* renderer_OpenGL_2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_2.c; path = src/renderer_OpenGL_2.c; sourceTree = SOURCE_ROOT; };
+		398D386A47244E1CA690AD9C /* SDL_gpu_matrix.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_matrix.c; path = src/SDL_gpu_matrix.c; sourceTree = SOURCE_ROOT; };
+		3A3CD3CCFF2B4DE79C4E7C68 /* SDL_gpu_GLES_3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_3.h; path = include/SDL_gpu_GLES_3.h; sourceTree = SOURCE_ROOT; };
+		3D6224CDB409416792E44D7B /* stb_image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image.h; path = src/externals/stb_image/stb_image.h; sourceTree = SOURCE_ROOT; };
+		3E6753FFBEE84DC6A781742F /* SDL_gpu.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu.h; path = include/SDL_gpu.h; sourceTree = SOURCE_ROOT; };
+		3FAEDD9A0EDF40D5A471BBB5 /* SDL_gpu_shapes.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_shapes.c; path = src/SDL_gpu_shapes.c; sourceTree = SOURCE_ROOT; };
+		40ECF4B5B6844F42B86039D9 /* SDL_gpu_GLES_1.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_1.h; path = include/SDL_gpu_GLES_1.h; sourceTree = SOURCE_ROOT; };
+		4BC381A2D5474130B62C2800 /* SDL_gpu.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu.c; path = src/SDL_gpu.c; sourceTree = SOURCE_ROOT; };
+		4BC8A128BA644DF183FC333C /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5359396A1B734FC0B010EC2B /* SDL_gpu.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu.c; path = src/SDL_gpu.c; sourceTree = SOURCE_ROOT; };
+		55A2A4825DAC476499D59C78 /* SDL_gpu_OpenGL_3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_3.h; path = include/SDL_gpu_OpenGL_3.h; sourceTree = SOURCE_ROOT; };
+		58DB3F81011A4B98904E6CA1 /* renderer_shapes_GL_common.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = renderer_shapes_GL_common.inl; path = src/renderer_shapes_GL_common.inl; sourceTree = SOURCE_ROOT; };
+		5C40611DD51242FAAD95A441 /* renderer_GLES_1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_1.c; path = src/renderer_GLES_1.c; sourceTree = SOURCE_ROOT; };
+		60F6840D7BBB49BB8D5C2EC2 /* renderer_OpenGL_1_BASE.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_1_BASE.c; path = src/renderer_OpenGL_1_BASE.c; sourceTree = SOURCE_ROOT; };
+		61D094850F194ABCBA658E8A /* SDL_gpu_OpenGL_1.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_1.h; path = include/SDL_gpu_OpenGL_1.h; sourceTree = SOURCE_ROOT; };
+		64C00DCB3EEE4B7C8CCC704C /* SDL_gpu_OpenGL_1_BASE.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_1_BASE.h; path = include/SDL_gpu_OpenGL_1_BASE.h; sourceTree = SOURCE_ROOT; };
+		67B8AABBA8DC4BB087BE87EB /* renderer_OpenGL_1_BASE.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_1_BASE.c; path = src/renderer_OpenGL_1_BASE.c; sourceTree = SOURCE_ROOT; };
+		6829052A283F4625BB3E4215 /* SDL_gpu_OpenGL_4.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_4.h; path = include/SDL_gpu_OpenGL_4.h; sourceTree = SOURCE_ROOT; };
+		74FB7DA542C3405A83CB70A4 /* SDL_gpu_GLES_2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_2.h; path = include/SDL_gpu_GLES_2.h; sourceTree = SOURCE_ROOT; };
+		7A3E31384D1C44B090DBD2D0 /* SDL_gpu.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu.h; path = include/SDL_gpu.h; sourceTree = SOURCE_ROOT; };
+		7CC09A6BE13A453FBB39DF20 /* stb_image_write.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image_write.h; path = src/externals/stb_image_write/stb_image_write.h; sourceTree = SOURCE_ROOT; };
+		82D7FAE3F39947A7A3E280C9 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		870CC56695AD4153873ACC1C /* SDL_gpu_shapes.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = SDL_gpu_shapes.c; path = src/SDL_gpu_shapes.c; sourceTree = SOURCE_ROOT; };
+		87CC050C1C3D4EA7B26C4E0B /* renderer_OpenGL_4.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_4.c; path = src/renderer_OpenGL_4.c; sourceTree = SOURCE_ROOT; };
+		882F29247F77443F99A2CAAB /* SDL_gpu_GLES_2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_2.h; path = include/SDL_gpu_GLES_2.h; sourceTree = SOURCE_ROOT; };
+		88DB070468C24236B9DAC250 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8CE697D5F80340DC85928A1F /* renderer_shapes_GL_common.inl */ = {isa = PBXFileReference; explicitFileType = sourcecode; fileEncoding = 4; name = renderer_shapes_GL_common.inl; path = src/renderer_shapes_GL_common.inl; sourceTree = SOURCE_ROOT; };
+		8FDA2BA3956C480D916B90B4 /* renderer_OpenGL_1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_1.c; path = src/renderer_OpenGL_1.c; sourceTree = SOURCE_ROOT; };
+		9630DBDF9AD4421BAA96CBE4 /* glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = src/externals/glew/glew.c; sourceTree = SOURCE_ROOT; };
+		97432B84C6BA4E0998A05F22 /* glew.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = glew.c; path = src/externals/glew/glew.c; sourceTree = SOURCE_ROOT; };
+		9A37DEE773AF49DFBDA4E788 /* SDL_gpu_OpenGL_3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_3.h; path = include/SDL_gpu_OpenGL_3.h; sourceTree = SOURCE_ROOT; };
+		9C3047C0FDDA4CFAA2C55673 /* renderer_GLES_3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_3.c; path = src/renderer_GLES_3.c; sourceTree = SOURCE_ROOT; };
+		9E9BF0298E1F43B29031371A /* stb_image.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_image.h; path = src/externals/stb_image/stb_image.h; sourceTree = SOURCE_ROOT; };
+		9EF4DA49419B4834AA8851BC /* renderer_OpenGL_1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_1.c; path = src/renderer_OpenGL_1.c; sourceTree = SOURCE_ROOT; };
+		9F073787D8044F10A088D7F1 /* wglew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = wglew.h; path = src/externals/glew/GL/wglew.h; sourceTree = SOURCE_ROOT; };
+		A822B182ABD94E08851B286F /* SDL_gpu_GLES_1.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_1.h; path = include/SDL_gpu_GLES_1.h; sourceTree = SOURCE_ROOT; };
+		AB6A4F69352041A7A5BCA224 /* SDL_gpu_OpenGL_2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_2.h; path = include/SDL_gpu_OpenGL_2.h; sourceTree = SOURCE_ROOT; };
+		AF5E2EF6B67C470EBB7B6C44 /* renderer_GLES_2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_2.c; path = src/renderer_GLES_2.c; sourceTree = SOURCE_ROOT; };
+		C289478119424CD79B9F4916 /* glew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glew.h; path = src/externals/glew/GL/glew.h; sourceTree = SOURCE_ROOT; };
+		C509E341A9BA4D1A909F897F /* renderer_OpenGL_3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_3.c; path = src/renderer_OpenGL_3.c; sourceTree = SOURCE_ROOT; };
+		C7025A9FB5DD47F18FEC7F22 /* SDL2_gpu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL2_gpu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF1D1DD049E48588032E023 /* libSDL2_gpu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDL2_gpu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5AF0B31443C422CA7A40B57 /* stb_image_write.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stb_image_write.c; path = src/externals/stb_image_write/stb_image_write.c; sourceTree = SOURCE_ROOT; };
+		D841AA1050EE4D8BADE4767B /* stb_image.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stb_image.c; path = src/externals/stb_image/stb_image.c; sourceTree = SOURCE_ROOT; };
+		DF1093D37C064D30BD395B50 /* renderer_GLES_1.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_1.c; path = src/renderer_GLES_1.c; sourceTree = SOURCE_ROOT; };
+		E0971849EC8E4C7BA82E91FE /* renderer_GLES_3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_GLES_3.c; path = src/renderer_GLES_3.c; sourceTree = SOURCE_ROOT; };
+		EB7223D6E3ED4E4D880056AF /* SDL_gpu_GLES_3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_GLES_3.h; path = include/SDL_gpu_GLES_3.h; sourceTree = SOURCE_ROOT; };
+		F0A1217A83444FBA92D4828E /* wglew.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = wglew.h; path = src/externals/glew/GL/wglew.h; sourceTree = SOURCE_ROOT; };
+		F68CE292E08E4999B68236A4 /* renderer_OpenGL_3.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = renderer_OpenGL_3.c; path = src/renderer_OpenGL_3.c; sourceTree = SOURCE_ROOT; };
+		FF54DBE9309D4D56954D8E4A /* SDL_gpu_OpenGL_2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SDL_gpu_OpenGL_2.h; path = include/SDL_gpu_OpenGL_2.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1B9C5A925EB2415BA0AE904B /* SDL_gpu */ = {
+			isa = PBXGroup;
+			children = (
+				DC8CE44285244AF2A75540F9 /* Common */,
+				88DB070468C24236B9DAC250 /* CMakeLists.txt */,
+			);
+			name = SDL_gpu;
+			sourceTree = "<group>";
+		};
+		2A81FC5DD844468C9135B5E2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5359396A1B734FC0B010EC2B /* SDL_gpu.c */,
+				2BCEC7A5B2F0406B99919F43 /* SDL_gpu_matrix.c */,
+				06B91E3209D94D8FAB36CF8F /* SDL_gpu_renderer.c */,
+				870CC56695AD4153873ACC1C /* SDL_gpu_shapes.c */,
+				199375524D614B4BB52FBC7B /* glew.h */,
+				23A7D8FB193C4948B9C49E8E /* glxew.h */,
+				F0A1217A83444FBA92D4828E /* wglew.h */,
+				97432B84C6BA4E0998A05F22 /* glew.c */,
+				21A63CAB72234F30ADE9BB1D /* stb_image.c */,
+				9E9BF0298E1F43B29031371A /* stb_image.h */,
+				31F2E44C646E4AA9982BBF1E /* stb_image_write.c */,
+				202C64A201034B4A8CEA12B5 /* stb_image_write.h */,
+				DF1093D37C064D30BD395B50 /* renderer_GLES_1.c */,
+				AF5E2EF6B67C470EBB7B6C44 /* renderer_GLES_2.c */,
+				E0971849EC8E4C7BA82E91FE /* renderer_GLES_3.c */,
+				26C883969C584A20B7E3268B /* renderer_GL_common.inl */,
+				8FDA2BA3956C480D916B90B4 /* renderer_OpenGL_1.c */,
+				67B8AABBA8DC4BB087BE87EB /* renderer_OpenGL_1_BASE.c */,
+				167AC47D184A46339624ACB6 /* renderer_OpenGL_2.c */,
+				F68CE292E08E4999B68236A4 /* renderer_OpenGL_3.c */,
+				0D6A46B82D344B7A8F05D8B0 /* renderer_OpenGL_4.c */,
+				8CE697D5F80340DC85928A1F /* renderer_shapes_GL_common.inl */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3AAF0119C97F4F9CA44FCB4D /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				74A80B39685844E38B7E7160 /* CMake Rules */,
+				4BC8A128BA644DF183FC333C /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		410CEF1C376E4E0AA80D263A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1D1DD049E48588032E023 /* libSDL2_gpu.a */,
+				C7025A9FB5DD47F18FEC7F22 /* SDL2_gpu.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		452FDB0DB049434786F9AF88 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3AAF0119C97F4F9CA44FCB4D /* ALL_BUILD */,
+				9F50F63EDE5041A2A4B088D9 /* ZERO_CHECK */,
+				1B9C5A925EB2415BA0AE904B /* SDL_gpu */,
+				E003C2058266498796796341 /* SDL_gpu_shared */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		6A220127E59C453499A2DE37 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		74A80B39685844E38B7E7160 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9AC51D5D60E344D88F68223E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A3E31384D1C44B090DBD2D0 /* SDL_gpu.h */,
+				40ECF4B5B6844F42B86039D9 /* SDL_gpu_GLES_1.h */,
+				882F29247F77443F99A2CAAB /* SDL_gpu_GLES_2.h */,
+				EB7223D6E3ED4E4D880056AF /* SDL_gpu_GLES_3.h */,
+				61D094850F194ABCBA658E8A /* SDL_gpu_OpenGL_1.h */,
+				64C00DCB3EEE4B7C8CCC704C /* SDL_gpu_OpenGL_1_BASE.h */,
+				AB6A4F69352041A7A5BCA224 /* SDL_gpu_OpenGL_2.h */,
+				55A2A4825DAC476499D59C78 /* SDL_gpu_OpenGL_3.h */,
+				1D0EE7960B8245EDBB44124E /* SDL_gpu_OpenGL_4.h */,
+				124CF437863C4FEB85BDFF90 /* SDL_gpu_RendererImpl.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9D8668F45C204595AD7763F6 = {
+			isa = PBXGroup;
+			children = (
+				452FDB0DB049434786F9AF88 /* Sources */,
+				9AC51D5D60E344D88F68223E /* Resources */,
+				410CEF1C376E4E0AA80D263A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F50F63EDE5041A2A4B088D9 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				6A220127E59C453499A2DE37 /* CMake Rules */,
+				82D7FAE3F39947A7A3E280C9 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		DC8CE44285244AF2A75540F9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3E6753FFBEE84DC6A781742F /* SDL_gpu.h */,
+				A822B182ABD94E08851B286F /* SDL_gpu_GLES_1.h */,
+				74FB7DA542C3405A83CB70A4 /* SDL_gpu_GLES_2.h */,
+				3A3CD3CCFF2B4DE79C4E7C68 /* SDL_gpu_GLES_3.h */,
+				0903CBE3CD5F4DB4BEFBB454 /* SDL_gpu_OpenGL_1.h */,
+				1FEA524360C44C30894EC69E /* SDL_gpu_OpenGL_1_BASE.h */,
+				FF54DBE9309D4D56954D8E4A /* SDL_gpu_OpenGL_2.h */,
+				9A37DEE773AF49DFBDA4E788 /* SDL_gpu_OpenGL_3.h */,
+				6829052A283F4625BB3E4215 /* SDL_gpu_OpenGL_4.h */,
+				0152B70F250F4D709BD4BD19 /* SDL_gpu_RendererImpl.h */,
+				4BC381A2D5474130B62C2800 /* SDL_gpu.c */,
+				398D386A47244E1CA690AD9C /* SDL_gpu_matrix.c */,
+				02927EC5D73749A1BE3F0CEE /* SDL_gpu_renderer.c */,
+				3FAEDD9A0EDF40D5A471BBB5 /* SDL_gpu_shapes.c */,
+				C289478119424CD79B9F4916 /* glew.h */,
+				2CC078D9CB1E4A72955A0440 /* glxew.h */,
+				9F073787D8044F10A088D7F1 /* wglew.h */,
+				9630DBDF9AD4421BAA96CBE4 /* glew.c */,
+				D841AA1050EE4D8BADE4767B /* stb_image.c */,
+				3D6224CDB409416792E44D7B /* stb_image.h */,
+				D5AF0B31443C422CA7A40B57 /* stb_image_write.c */,
+				7CC09A6BE13A453FBB39DF20 /* stb_image_write.h */,
+				5C40611DD51242FAAD95A441 /* renderer_GLES_1.c */,
+				1911BCD8416D44B5AFD4A47E /* renderer_GLES_2.c */,
+				9C3047C0FDDA4CFAA2C55673 /* renderer_GLES_3.c */,
+				2A19E7D78F5F46B3950806CF /* renderer_GL_common.inl */,
+				9EF4DA49419B4834AA8851BC /* renderer_OpenGL_1.c */,
+				60F6840D7BBB49BB8D5C2EC2 /* renderer_OpenGL_1_BASE.c */,
+				38074617F6DB41A4863223FC /* renderer_OpenGL_2.c */,
+				C509E341A9BA4D1A909F897F /* renderer_OpenGL_3.c */,
+				87CC050C1C3D4EA7B26C4E0B /* renderer_OpenGL_4.c */,
+				58DB3F81011A4B98904E6CA1 /* renderer_shapes_GL_common.inl */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		E003C2058266498796796341 /* SDL_gpu_shared */ = {
+			isa = PBXGroup;
+			children = (
+				2A81FC5DD844468C9135B5E2 /* Common */,
+				19933ED9B4454EA7AF24D164 /* CMakeLists.txt */,
+			);
+			name = SDL_gpu_shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CD8CFC636BFC4E20AE2CF2F7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F69C87432BF448BB438114D /* SDL_gpu.h in Headers */,
+				0C989EB3FD544A979AB9AC12 /* SDL_gpu_GLES_1.h in Headers */,
+				6C3789D828DF4FE79D8639A7 /* SDL_gpu_GLES_2.h in Headers */,
+				0359F6ADDD1C45C39ED03699 /* SDL_gpu_GLES_3.h in Headers */,
+				F8A41FC674E84F04BEE6021F /* SDL_gpu_OpenGL_1.h in Headers */,
+				D03AF0295C8B4786B0BA581C /* SDL_gpu_OpenGL_1_BASE.h in Headers */,
+				FB8AB153A51649BFB1A00E44 /* SDL_gpu_OpenGL_2.h in Headers */,
+				E3B84DC3B9B3481B8DB306C0 /* SDL_gpu_OpenGL_3.h in Headers */,
+				600B1842713F440CBD9E385B /* SDL_gpu_OpenGL_4.h in Headers */,
+				AB5295AA2B1C409BBE88A9F1 /* SDL_gpu_RendererImpl.h in Headers */,
+				4261C9F739B24BEC8AED7385 /* glew.h in Headers */,
+				ACA759581BEB46E2987798AB /* glxew.h in Headers */,
+				71F57A9F8A28420C8DF2CE20 /* wglew.h in Headers */,
+				1D2C80EB7E04479EA5D7D9B1 /* stb_image.h in Headers */,
+				7BEB42EAA2D54E3CAB462B8B /* stb_image_write.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2B2F8FC196B540D6BB046C93 /* SDL_gpu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE0735519694A76A3A7929F /* Build configuration list for PBXNativeTarget "SDL_gpu" */;
+			buildPhases = (
+				C317405CF7664209A100D82F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0EF0EFA5B18F47B6B18154C1 /* PBXTargetDependency */,
+			);
+			name = SDL_gpu;
+			productName = SDL_gpu;
+			productReference = CEF1D1DD049E48588032E023 /* libSDL2_gpu.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C98DD690F0DE4E13B6920BFF /* SDL_gpu_shared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23C455C631024CF58D000D3D /* Build configuration list for PBXNativeTarget "SDL_gpu_shared" */;
+			buildPhases = (
+				CD8CFC636BFC4E20AE2CF2F7 /* Headers */,
+				86E60097D1F542CCA575EF60 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6ED9A1A228724228A0A72EE0 /* PBXTargetDependency */,
+			);
+			name = SDL_gpu_shared;
+			productName = SDL_gpu_shared;
+			productReference = C7025A9FB5DD47F18FEC7F22 /* SDL2_gpu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		520F4C2F93D946C798CDC020 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0830;
+			};
+			buildConfigurationList = 9E080A3001744EC981EBCD3D /* Build configuration list for PBXProject "SDL_gpu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9D8668F45C204595AD7763F6;
+			projectDirPath = "../sdl-gpu";
+			projectRoot = "";
+			targets = (
+				DA0C64524F904DEE8D78BB1E /* ALL_BUILD */,
+				854DDECD0EA84F389817DE73 /* ZERO_CHECK */,
+				B4D599A5399941FDB8E16A3C /* install */,
+				2B2F8FC196B540D6BB046C93 /* SDL_gpu */,
+				C98DD690F0DE4E13B6920BFF /* SDL_gpu_shared */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		599AF430277946D4ABE0DB83 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C ../sdl-gpu-xcode -f ../sdl-gpu-xcode/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		6B452928A9344CB8B279B7FB /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C ../sdl-gpu-xcode -f ../sdl-gpu-xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B4F07508365A4A31952B38BA /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C ../sdl-gpu-xcode -f ../sdl-gpu-xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86E60097D1F542CCA575EF60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C4C8A97B1A467CA035C40D /* SDL_gpu.c in Sources */,
+				F59F116CE2334395A97702B6 /* SDL_gpu_matrix.c in Sources */,
+				761AA4E4976D4D7D9E4F27DB /* SDL_gpu_renderer.c in Sources */,
+				5E714AF3E4534ED4B8DCDD10 /* SDL_gpu_shapes.c in Sources */,
+				1E171DDEB9C34393B884FC33 /* glew.c in Sources */,
+				9A47516FAF284A578044C20F /* stb_image.c in Sources */,
+				945ED752CA054D9BA9C53112 /* stb_image_write.c in Sources */,
+				92451C953C98471C801FE653 /* renderer_GLES_1.c in Sources */,
+				DDA7057BFB4540E6B05AB0D7 /* renderer_GLES_2.c in Sources */,
+				C552F1C8BF0942B7AC985E52 /* renderer_GLES_3.c in Sources */,
+				4BA324F8797445F9A75710C6 /* renderer_OpenGL_1.c in Sources */,
+				DCA34CFDD13C4552B82FA686 /* renderer_OpenGL_1_BASE.c in Sources */,
+				D618CCDCD89D4044A8B593A6 /* renderer_OpenGL_2.c in Sources */,
+				4DF254B4975F492E87AE994A /* renderer_OpenGL_3.c in Sources */,
+				6E1E8BADBE6D42178A463694 /* renderer_OpenGL_4.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C317405CF7664209A100D82F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BEFC006C8C54DC29E889E27 /* SDL_gpu.c in Sources */,
+				9E10C5CC08154C6B9BB22854 /* SDL_gpu_matrix.c in Sources */,
+				798A045556864E9FBAEC2F3A /* SDL_gpu_renderer.c in Sources */,
+				9B3611AC47C443D982B38E6B /* SDL_gpu_shapes.c in Sources */,
+				94EE696655F44D2A88103497 /* glew.c in Sources */,
+				CB42DBEEBB0542F09730B867 /* stb_image.c in Sources */,
+				864DACF9B10B4249B611D3BA /* stb_image_write.c in Sources */,
+				E5C681E17AA54B0C813FD44B /* renderer_GLES_1.c in Sources */,
+				5C6F31881E5F432AA180B6C1 /* renderer_GLES_2.c in Sources */,
+				A83204FEFDD6471481712D6E /* renderer_GLES_3.c in Sources */,
+				EA4F2C7C7E064827BD0F6486 /* renderer_OpenGL_1.c in Sources */,
+				BE859D8F117341B392AE4C1F /* renderer_OpenGL_1_BASE.c in Sources */,
+				FA2D0052E29443D881A39028 /* renderer_OpenGL_2.c in Sources */,
+				C95B7DBEA3044C2FA43987A1 /* renderer_OpenGL_3.c in Sources */,
+				4E115558439B4E119ADEE601 /* renderer_OpenGL_4.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0EF0EFA5B18F47B6B18154C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 854DDECD0EA84F389817DE73 /* ZERO_CHECK */;
+			targetProxy = D325D806F2FC48F4B0495251 /* PBXContainerItemProxy */;
+		};
+		2BFC0357E047440EB6B48E7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C98DD690F0DE4E13B6920BFF /* SDL_gpu_shared */;
+			targetProxy = 86C17024872A48EC8657DFDD /* PBXContainerItemProxy */;
+		};
+		6ED9A1A228724228A0A72EE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 854DDECD0EA84F389817DE73 /* ZERO_CHECK */;
+			targetProxy = DD92CB15263445E6BBDA0F68 /* PBXContainerItemProxy */;
+		};
+		7854E9DE04D8439AB4F7555F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 854DDECD0EA84F389817DE73 /* ZERO_CHECK */;
+			targetProxy = F95707C9652346C095DB5F3A /* PBXContainerItemProxy */;
+		};
+		D91CCA867492411889766854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B2F8FC196B540D6BB046C93 /* SDL_gpu */;
+			targetProxy = 140D503AD3534F16B4BE82D2 /* PBXContainerItemProxy */;
+		};
+		DE4A670B30D543F291CCBB6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA0C64524F904DEE8D78BB1E /* ALL_BUILD */;
+			targetProxy = CD3F302BADDB4DD4B3C300C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		087BCD65D53A4CF79D2AC23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		0AE699738E284860A1E7E906 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		12F59BBA2AAA49F4BA96AED9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		21757A22F5B940FBA39D3788 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		36663FE57025493C987068AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		41B8429F1BE74461A253800C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = RelWithDebInfo;
+		};
+		49849141DAEB41BBBC5E472F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
+				DYLIB_CURRENT_VERSION = 0.11.0;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					SDL_gpu_shared_EXPORTS,
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					SDL2,
+					/usr/lib/libm.dylib,
+					"-framework",
+					OpenGL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		5070283F8C0A4AB4BD124F7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5257FE5190E54CF182307759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		60BBBB68A11746A6928B3504 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = MinSizeRel;
+		};
+		620985548A0F4CC79F57A18C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		66700488C652437C9006C83E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		7E63EB2C1F8A4E849B7B5168 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		7EEB2691688A46C4899529C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
+				DYLIB_CURRENT_VERSION = 0.11.0;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					SDL_gpu_shared_EXPORTS,
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-fPIC",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					SDL2,
+					/usr/lib/libm.dylib,
+					"-framework",
+					OpenGL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		8519DDC87F4042509F1E1EDA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
+				DYLIB_CURRENT_VERSION = 0.11.0;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					SDL_gpu_shared_EXPORTS,
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					SDL2,
+					/usr/lib/libm.dylib,
+					"-framework",
+					OpenGL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		96D572AC271340DCAA91EB22 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		AC1C0AAA0DC340DF902E40FA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		B04F1C0155DD4D95A75C2522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		B6D2C7225E8F4AAEB6695C82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		C46D6ED715794478B11C93EB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		C504C2C454A34A85BFD49847 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		C753540F60694E4BAFBB52F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		CAF5CD869F40441F8576C888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "../sdl-gpu-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		F5D7F8AD64824FD59B1B5489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
+				DYLIB_CURRENT_VERSION = 0.11.0;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					SDL_gpu_shared_EXPORTS,
+					GLEW_STATIC,
+					SDL_GPU_DISABLE_GLES,
+					STBI_FAILURE_USERMSG,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL2.framework/Headers,
+					"../sdl-gpu/include",
+					"../sdl-gpu/src",
+					"../sdl-gpu/src/externals/glew",
+					"../sdl-gpu/src/externals/glew/GL",
+					"../sdl-gpu/src/externals/stb_image",
+					"../sdl-gpu/src/externals/stb_image_write",
+				);
+				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-I/Library/Frameworks/SDL2.framework/Headers",
+					"-I../sdl-gpu/include",
+					"-I../sdl-gpu/src",
+					"-I../sdl-gpu/src/externals/glew",
+					"-I../sdl-gpu/src/externals/glew/GL",
+					"-I../sdl-gpu/src/externals/stb_image",
+					"-I../sdl-gpu/src/externals/stb_image_write",
+					"-Wall",
+					"-std=c99",
+					"-pedantic",
+				);
+				OTHER_LDFLAGS = (
+					"-framework",
+					SDL2,
+					/usr/lib/libm.dylib,
+					"-framework",
+					OpenGL,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL2_gpu;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23C455C631024CF58D000D3D /* Build configuration list for PBXNativeTarget "SDL_gpu_shared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EEB2691688A46C4899529C7 /* Debug */,
+				F5D7F8AD64824FD59B1B5489 /* Release */,
+				8519DDC87F4042509F1E1EDA /* MinSizeRel */,
+				49849141DAEB41BBBC5E472F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3AD07D269F7D48B885A3BA01 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B04F1C0155DD4D95A75C2522 /* Debug */,
+				B6D2C7225E8F4AAEB6695C82 /* Release */,
+				C504C2C454A34A85BFD49847 /* MinSizeRel */,
+				C46D6ED715794478B11C93EB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5CE0735519694A76A3A7929F /* Build configuration list for PBXNativeTarget "SDL_gpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E63EB2C1F8A4E849B7B5168 /* Debug */,
+				36663FE57025493C987068AF /* Release */,
+				66700488C652437C9006C83E /* MinSizeRel */,
+				12F59BBA2AAA49F4BA96AED9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9E080A3001744EC981EBCD3D /* Build configuration list for PBXProject "SDL_gpu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE699738E284860A1E7E906 /* Debug */,
+				5070283F8C0A4AB4BD124F7C /* Release */,
+				60BBBB68A11746A6928B3504 /* MinSizeRel */,
+				41B8429F1BE74461A253800C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A1577804C70344DB8DBE90FC /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				087BCD65D53A4CF79D2AC23F /* Debug */,
+				CAF5CD869F40441F8576C888 /* Release */,
+				AC1C0AAA0DC340DF902E40FA /* MinSizeRel */,
+				96D572AC271340DCAA91EB22 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C330A642B9834925A4B3B8C8 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C753540F60694E4BAFBB52F5 /* Debug */,
+				5257FE5190E54CF182307759 /* Release */,
+				620985548A0F4CC79F57A18C /* MinSizeRel */,
+				21757A22F5B940FBA39D3788 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 520F4C2F93D946C798CDC020 /* Project object */;
+}
