@@ -1,0 +1,11 @@
+module SDL [system] {
+    umbrella header "SDL2/include/SDL.h"
+    link "SDL2"
+    export *
+
+    module gpu {
+        header "sdl-gpu/include/SDL_gpu.h"
+        link "SDL2_gpu"
+        export *
+    }
+}

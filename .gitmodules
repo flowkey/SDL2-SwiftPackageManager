@@ -1,0 +1,7 @@
+[submodule "SDL2"]
+	path = SDL2
+	url = git@github.com:spurious/SDL-mirror.git
+	branch = release-2.0.5
+[submodule "sdl-gpu"]
+	path = sdl-gpu
+	url = git@github.com:grimfang4/sdl-gpu.git
