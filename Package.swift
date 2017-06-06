@@ -3,5 +3,6 @@
 import PackageDescription
 
 let package = Package(
-    name: "SDL"
+    name: "SDL",
+    pkgConfig: "SDL2"
 )
