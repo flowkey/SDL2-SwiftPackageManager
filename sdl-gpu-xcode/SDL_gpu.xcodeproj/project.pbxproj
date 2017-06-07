@@ -789,13 +789,12 @@
 		49849141DAEB41BBBC5E472F /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
 				DYLIB_CURRENT_VERSION = 0.11.0;
-				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -820,8 +819,6 @@
 				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DNDEBUG",
 					"-fPIC",
@@ -845,7 +842,6 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = SDL2_gpu;
-				SECTORDER_FLAGS = "";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1060,13 +1056,12 @@
 		7EEB2691688A46C4899529C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
 				DYLIB_CURRENT_VERSION = 0.11.0;
-				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1091,8 +1086,6 @@
 				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-fPIC",
 					"-I/Library/Frameworks/SDL2.framework/Headers",
@@ -1115,7 +1108,6 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = SDL2_gpu;
-				SECTORDER_FLAGS = "";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1129,13 +1121,12 @@
 		8519DDC87F4042509F1E1EDA /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
 				DYLIB_CURRENT_VERSION = 0.11.0;
-				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1160,8 +1151,6 @@
 				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DNDEBUG",
 					"-fPIC",
@@ -1185,7 +1174,6 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = SDL2_gpu;
-				SECTORDER_FLAGS = "";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1479,13 +1467,12 @@
 		F5D7F8AD64824FD59B1B5489 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0.11.0;
 				DYLIB_CURRENT_VERSION = 0.11.0;
-				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -1510,8 +1497,6 @@
 				INFOPLIST_FILE = "../sdl-gpu-xcode/src/CMakeFiles/SDL_gpu_shared.dir/Info.plist";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DNDEBUG",
 					"-fPIC",
@@ -1535,7 +1520,6 @@
 				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = SDL2_gpu;
-				SECTORDER_FLAGS = "";
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
