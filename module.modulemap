@@ -8,4 +8,13 @@ module SDL [system] {
         link "SDL2_gpu"
         export *
     }
+
+    module ttf {
+        header "SDL_ttf/SDL_ttf.h"
+        link "z"
+        link "harfbuzz"
+        link "freetype"
+        link "SDL2_ttf"
+        export *
+    }
 }

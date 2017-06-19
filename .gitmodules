@@ -5,3 +5,9 @@
 [submodule "sdl-gpu"]
 	path = sdl-gpu
 	url = https://github.com/grimfang4/sdl-gpu.git
+[submodule "SDL_ttf"]
+	path = SDL_ttf
+	url = https://github.com/mozeal/SDL_ttf-mirror.git
+[submodule "freetype2"]
+	path = freetype2
+	url = git://git.sv.nongnu.org/freetype/freetype2.git
