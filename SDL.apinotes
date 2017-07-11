@@ -19,17 +19,7 @@ Functions:
 
 # SDL_GPU
 
-- Name: GPU_Clear
-  SwiftName: "GPU_Target.clear(self:)"
-
-- Name: GPU_Flip
-  SwiftName: "GPU_Target.flip(self:)"
-
-- Name: GPU_ClearColor
-  SwiftName: "GPU_Target.clear(self:with:)"
-
 - Name: GPU_Blit
-  SwiftName: "GPU_Target.blit(_:from:self:x:y:)"
   Nullability: [N, O, N, N, N]
 
 - Name: GPU_LoadImage
