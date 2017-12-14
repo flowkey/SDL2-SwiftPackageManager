@@ -1,0 +1,85 @@
+---
+Name: SDL
+SwiftInferImportAsMember: true
+
+Functions:
+- Name: SDL_GetError
+  SwiftPrivate: true
+  NullabilityOfRet: N
+- Name: SDL_ConvertSurfaceFormat
+  SwiftPrivate: true
+  SwiftName: "SDLSurface.withFormat(self:format:flags:)"
+  NullabilityOfRet: O
+
+# SDL_Renderer
+- Name: SDL_RenderCopy
+  Nullability: [N, N, O, O]
+
+# SDL_Rect
+- Name: SDL_PointInRect
+  SwiftName: "SDLPoint.isIn(self:_:)"
+  Nullability: [N]
+- Name: SDL_RectEmpty
+  SwiftName: "getter:SDLRect.isEmpty(self:)"
+- Name: SDL_RectEquals
+  SwiftName: "SDLRect.equals(self:_:)"
+  Nullability: [N]
+  SwiftPrivate: true
+- Name: SDL_HasIntersection
+  SwiftName: "SDLRect.intersects(self:_:)"
+  Nullability: [N]
+- Name: SDL_IntersectRect
+  SwiftName: "SDLRect.intersection(self:with:result:)"
+  Nullability: [N, N, N]
+  SwiftPrivate: true
+- Name: SDL_UnionRect
+  SwiftName: "SDLRect.union(self:with:result:)"
+- Name: SDL_EnclosePoints
+  SwiftName: "SDLRect.enclosingPoints(_:count:within:result:)"
+
+# SDL_Window
+- Name: SDL_CreateWindow
+  SwiftPrivate: true
+
+# SDL_DisplayMode
+- Name: SDL_GetCurrentDisplayMode
+  SwiftPrivate: true
+
+Tags:
+- Name: SDL_Color
+  SwiftName: SDLColor
+- Name: SDL_Surface
+  SwiftName: SDLSurface
+- Name: SDL_Rect
+  SwiftName: SDLRect
+- Name: SDL_Point
+  SwiftName: SDLPoint
+- Name: SDL_DisplayMode
+  SwiftName: SDLDisplayMode
+
+Typedefs:
+- Name: SDL_bool
+  SwiftName: SDLBool
+- Name: SDL_WindowFlags
+  SwiftName: SDLWindowFlags
+- Name: SDL_RendererFlags
+  SwiftName: SDLRendererFlags
+  SwiftPrivate: true
+- Name: Uint8
+  SwiftName: UInt8
+- Name: Uint16
+  SwiftName: UInt16
+- Name: Uint32
+  SwiftName: UInt32
+- Name: SDL_DisplayMode
+  SwiftName: SDLDisplayMode
+- Name: SDL_BlendMode
+  SwiftName: SDLBlendMode
+
+Enumerators:
+
+#SDL_bool
+- Name: SDL_FALSE
+  SwiftPrivate: true
+- Name: SDL_TRUE
+  SwiftPrivate: true

@@ -1,0 +1,1 @@
+../../external/SDL2/include/SDL_quit.h

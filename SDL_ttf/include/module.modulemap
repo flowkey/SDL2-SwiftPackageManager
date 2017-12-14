@@ -1,0 +1,5 @@
+module SDL_ttf {
+    header "SDL_ttf.h"
+    link "z"
+    export *
+}

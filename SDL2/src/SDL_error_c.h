@@ -1,0 +1,1 @@
+../../external/SDL2/src/SDL_error_c.h

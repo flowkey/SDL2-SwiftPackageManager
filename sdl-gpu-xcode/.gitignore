@@ -1,9 +1,0 @@
-CMakeFiles
-CMakeCache.txt
-Makefile
-SDL_gpu.build/
-demos
-src/CMakeFiles
-src/Makefile
-src/SDL2_gpu.framework/
-cmake_install.cmake

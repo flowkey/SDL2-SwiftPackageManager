@@ -1,0 +1,35 @@
+---
+Name: SDL_gpu
+SwiftInferImportAsMember: true
+
+Functions:
+- Name: GPU_Blit
+  Nullability: [N, O, N, N, N]
+
+- Name: GPU_LoadImage
+  Nullability: [N]
+  NullabilityOfRet: O
+
+- Name: GPU_Rectangle2
+  SwiftName: "GPU_Rectangle(_:_:color:)"
+  Nullability: [N, N, N]
+
+- Name: GPU_RectangleFilled2
+  SwiftName: "GPU_RectangleFilled(_:_:color:)"
+  Nullability: [N, N, N]
+
+- Name: GPU_RectangleRound2
+  SwiftName: "GPU_RectangleRound(_:_:cornerRadius:color:)"
+  Nullability: [N, N, N, N]
+
+- Name: GPU_RectangleRoundFilled2
+  SwiftName: "GPU_RectangleRoundFilled(_:_:cornerRadius:color:)"
+  Nullability: [N, N, N, N]
+
+Typedefs:
+- Name: Uint8
+  SwiftName: UInt8
+- Name: Uint16
+  SwiftName: UInt16
+- Name: Uint32
+  SwiftName: UInt32
