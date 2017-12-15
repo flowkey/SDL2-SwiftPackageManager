@@ -1,5 +1,4 @@
 module SDL_gpu {
     header "SDL_gpu.h"
-    link "SDL2"
     export *
 }

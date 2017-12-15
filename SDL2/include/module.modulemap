@@ -1,5 +1,4 @@
 module SDL [system] {
     header "SDL.h"
-    link "SDL2"
     export *
 }
