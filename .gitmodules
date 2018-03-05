@@ -7,4 +7,4 @@
 	url = https://github.com/grimfang4/sdl-gpu.git
 [submodule "SDL_ttf"]
 	path = external/SDL_ttf
-	url = https://github.com/mozeal/SDL_ttf-mirror.git
+	url = git@github.com:flowkey/SDL_ttf-mirror.git
