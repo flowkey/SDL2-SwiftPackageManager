@@ -1,10 +1,10 @@
 [submodule "SDL2"]
 	path = external/SDL2
-	url = https://github.com/spurious/SDL-mirror.git
+	url = git@github.com:spurious/SDL-mirror.git
 	branch = release-2.0.5
 [submodule "sdl-gpu"]
 	path = external/sdl-gpu
-	url = https://github.com/grimfang4/sdl-gpu.git
+	url = git@github.com:grimfang4/sdl-gpu.git
 [submodule "external/SDL_ttf"]
 	path = external/SDL_ttf
-	url = https://github.com/flowkey/SDL_ttf-mirror
+	url = git@github.com:flowkey/SDL_ttf-mirror.git
