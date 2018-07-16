@@ -111,7 +111,7 @@ JNIEXPORT void JNICALL SDL_Android_Init(JNIEnv* mEnv, jobject obj)
 
     mLayoutInstance = (jobject)((*mEnv)->NewGlobalRef(mEnv, obj));
 
-    jclass cls = (jclass)((*mEnv)->GetObjectClass(mEnv, obj));
+    jclass cls = (jclass)((*mEnv)->FindClass(mEnv, "org/libsdl/app/SDLActivity"));
     mLayoutClass = (jclass)((*mEnv)->NewGlobalRef(mEnv, cls));
 
     jmethodID midGetContext = (*mEnv)->GetMethodID(mEnv, mLayoutClass,
