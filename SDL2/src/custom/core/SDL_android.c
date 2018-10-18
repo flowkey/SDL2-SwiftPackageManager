@@ -213,16 +213,6 @@ JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeKeyboardFocusLost
     SDL_StopTextInput();
 }
 
-
-/* Touch */
-JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeTouch(
-                                    JNIEnv* env, jclass jcls,
-                                    jint touch_device_id_in, jint pointer_finger_id_in,
-                                    jint action, jfloat x, jfloat y, jfloat p)
-{
-    Android_OnTouch(touch_device_id_in, pointer_finger_id_in, action, x, y, p);
-}
-
 /* Mouse */
 JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeMouse(
                                     JNIEnv* env, jclass jcls,
