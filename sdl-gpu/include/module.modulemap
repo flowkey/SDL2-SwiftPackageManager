@@ -1,4 +1,6 @@
 module SDL_gpu {
     header "SDL_gpu.h"
+    header "stb_image.h"
+    header "stb_image_write.h"
     export *
 }
