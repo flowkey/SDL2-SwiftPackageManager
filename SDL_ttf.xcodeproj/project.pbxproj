@@ -10,7 +10,6 @@
 		5C16438C22DCEBC40049AF8D /* autofit.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF98820163B8D00D989BC /* autofit.c */; };
 		5C16438D22DCEBC40049AF8D /* bdf.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9B620163BE600D989BC /* bdf.c */; };
 		5C16438E22DCEBC40049AF8D /* cff.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9BC20163C2600D989BC /* cff.c */; };
-		5C16438F22DCEBC40049AF8D /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99A20163BD000D989BC /* ftbase.c */; };
 		5C16439022DCEBC40049AF8D /* ftbbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF98F20163BCE00D989BC /* ftbbox.c */; };
 		5C16439122DCEBC40049AF8D /* ftbdf.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99220163BCE00D989BC /* ftbdf.c */; };
 		5C16439222DCEBC40049AF8D /* ftbitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99B20163BD000D989BC /* ftbitmap.c */; };
@@ -24,7 +23,6 @@
 		5C16439A22DCEBC40049AF8D /* ftgxval.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99420163BCE00D989BC /* ftgxval.c */; };
 		5C16439B22DCEBC40049AF8D /* ftgzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9C020163C4300D989BC /* ftgzip.c */; };
 		5C16439C22DCEBC40049AF8D /* ftinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF98A20163BCE00D989BC /* ftinit.c */; };
-		5C16439D22DCEBC40049AF8D /* ftlcdfil.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99620163BCF00D989BC /* ftlcdfil.c */; };
 		5C16439E22DCEBC40049AF8D /* ftlzw.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9C220163C4F00D989BC /* ftlzw.c */; };
 		5C16439F22DCEBC40049AF8D /* ftmm.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99D20163BD000D989BC /* ftmm.c */; };
 		5C1643A022DCEBC40049AF8D /* ftotval.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99120163BCE00D989BC /* ftotval.c */; };
@@ -48,6 +46,7 @@
 		5C1643B322DCEBC40049AF8D /* type1cid.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9BE20163C3500D989BC /* type1cid.c */; };
 		5C1643B422DCEBC40049AF8D /* type42.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9D820163CE500D989BC /* type42.c */; };
 		5C1643B522DCEBC40049AF8D /* winfnt.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF9DA20163CEC00D989BC /* winfnt.c */; };
+		5C7F103722DE43F600463157 /* ftbase.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF99A20163BD000D989BC /* ftbase.c */; };
 		5CFFF98420163B2900D989BC /* SDL_ttf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CFFF98220163B2900D989BC /* SDL_ttf.h */; };
 		5CFFF98520163B2900D989BC /* SDL_ttf.c in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFF98320163B2900D989BC /* SDL_ttf.c */; };
 		5CFFF9E720173B7500D989BC /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFFF9DE20163D1000D989BC /* SDL2.framework */; };
@@ -71,7 +70,6 @@
 		5CFFF99320163BCE00D989BC /* ftdebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftdebug.c; path = base/ftdebug.c; sourceTree = "<group>"; };
 		5CFFF99420163BCE00D989BC /* ftgxval.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftgxval.c; path = base/ftgxval.c; sourceTree = "<group>"; };
 		5CFFF99520163BCF00D989BC /* ftstroke.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftstroke.c; path = base/ftstroke.c; sourceTree = "<group>"; };
-		5CFFF99620163BCF00D989BC /* ftlcdfil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftlcdfil.c; path = base/ftlcdfil.c; sourceTree = "<group>"; };
 		5CFFF99720163BCF00D989BC /* ftsystem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftsystem.c; path = base/ftsystem.c; sourceTree = "<group>"; };
 		5CFFF99820163BCF00D989BC /* ftsynth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftsynth.c; path = base/ftsynth.c; sourceTree = "<group>"; };
 		5CFFF99920163BD000D989BC /* ftwinfnt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ftwinfnt.c; path = base/ftwinfnt.c; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				5CFFF99420163BCE00D989BC /* ftgxval.c */,
 				5CFFF9C020163C4300D989BC /* ftgzip.c */,
 				5CFFF98A20163BCE00D989BC /* ftinit.c */,
-				5CFFF99620163BCF00D989BC /* ftlcdfil.c */,
 				5CFFF9C220163C4F00D989BC /* ftlzw.c */,
 				5CFFF99D20163BD000D989BC /* ftmm.c */,
 				5CFFF99120163BCE00D989BC /* ftotval.c */,
@@ -305,12 +302,12 @@
 				5C16439322DCEBC40049AF8D /* ftbzip2.c in Sources */,
 				5C1643A722DCEBC40049AF8D /* ftwinfnt.c in Sources */,
 				5C16439422DCEBC40049AF8D /* ftcache.c in Sources */,
-				5C16438F22DCEBC40049AF8D /* ftbase.c in Sources */,
 				5CFFF98520163B2900D989BC /* SDL_ttf.c in Sources */,
 				5C1643AE22DCEBC40049AF8D /* raster.c in Sources */,
 				5C1643A322DCEBC40049AF8D /* ftstroke.c in Sources */,
 				5C16439122DCEBC40049AF8D /* ftbdf.c in Sources */,
 				5C1643B122DCEBC40049AF8D /* truetype.c in Sources */,
+				5C7F103722DE43F600463157 /* ftbase.c in Sources */,
 				5C1643B222DCEBC40049AF8D /* type1.c in Sources */,
 				5C16439622DCEBC40049AF8D /* ftdebug.c in Sources */,
 				5C1643A222DCEBC40049AF8D /* ftpfr.c in Sources */,
@@ -318,7 +315,6 @@
 				5C16439822DCEBC40049AF8D /* ftgasp.c in Sources */,
 				5C16439F22DCEBC40049AF8D /* ftmm.c in Sources */,
 				5C1643AC22DCEBC40049AF8D /* pshinter.c in Sources */,
-				5C16439D22DCEBC40049AF8D /* ftlcdfil.c in Sources */,
 				5C1643B022DCEBC40049AF8D /* smooth.c in Sources */,
 				5C16439722DCEBC40049AF8D /* ftfstype.c in Sources */,
 				5C1643A422DCEBC40049AF8D /* ftsynth.c in Sources */,
