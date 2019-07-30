@@ -25,7 +25,7 @@ file(GLOB SDL2_SOURCES
     src/timer/unix/*.c
     src/video/*.c
     src/video/android/*.c
-    src/test/*.c
+    # src/test/*.c
     src/atomic/SDL_atomic.c
     src/atomic/SDL_spinlock.c
 )
