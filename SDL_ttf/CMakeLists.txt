@@ -6,7 +6,7 @@ set_target_properties(SDL_ttf PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES
         "${SDL_SOURCE_DIR}/SDL_ttf ${SDL_SOURCE_DIR}/SDL2/include")
 
-target_link_libraries(SDL_ttf PUBLIC freetype)
+target_link_libraries(SDL_ttf PRIVATE freetype)
 
 target_include_directories(SDL_ttf
     PUBLIC
