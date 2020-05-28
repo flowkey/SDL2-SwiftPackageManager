@@ -24,7 +24,7 @@
 
 /* Android SDL video driver implementation
 */
-
+#include <android/log.h>
 #include "SDL_video.h"
 #include "SDL_mouse.h"
 #include "../SDL_sysvideo.h"
@@ -197,6 +197,8 @@ Android_VideoQuit(_THIS)
 void
 Android_SetScreenResolution(int width, int height, Uint32 format, float rate)
 {
+    __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "Android_SetScreenResolution");
+
     Android_ScreenWidth = width;
     Android_ScreenHeight = height;
     Android_ScreenFormat = format;
@@ -218,7 +220,10 @@ Android_SetScreenResolution(int width, int height, Uint32 format, float rate)
         display->desktop_mode.refresh_rate  = Android_ScreenRate;
     }
 
+    // MARK
     if (Android_Window) {
+        __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "setting Android_Window");
+
         SDL_SendWindowEvent(Android_Window, SDL_WINDOWEVENT_RESIZED, width, height);
 
         /* Force the current mode to match the resize otherwise the SDL_WINDOWEVENT_RESTORED event

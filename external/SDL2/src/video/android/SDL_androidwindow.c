@@ -22,6 +22,7 @@
 
 #if SDL_VIDEO_DRIVER_ANDROID
 
+#include <android/log.h>
 #include "SDL_syswm.h"
 #include "../SDL_sysvideo.h"
 #include "../../events/SDL_keyboard_c.h"
@@ -33,6 +34,8 @@
 int
 Android_CreateWindow(_THIS, SDL_Window * window)
 {
+    __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "Android_CreateWindow");
+
     SDL_WindowData *data;
     
     if (Android_Window) {
@@ -93,6 +96,7 @@ Android_SetWindowTitle(_THIS, SDL_Window * window)
 void
 Android_DestroyWindow(_THIS, SDL_Window * window)
 {
+    __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "Android_DestroyWindow");
     SDL_WindowData *data;
     
     if (window == Android_Window) {

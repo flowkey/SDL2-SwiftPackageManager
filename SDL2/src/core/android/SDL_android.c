@@ -26,6 +26,7 @@
 
 #ifdef __ANDROID__
 
+#include <android/log.h>
 #include "SDL_system.h"
 #include "SDL_android.h"
 #include <EGL/egl.h>
@@ -141,10 +142,12 @@ JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeResize(
 /* Surface Created */
 JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeSurfaceChanged(JNIEnv* env, jclass jcls)
 {
+    __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "onNativeSurfaceChanged");
     SDL_WindowData *data;
     SDL_VideoDevice *_this;
 
     if (Android_Window == NULL || Android_Window->driverdata == NULL) {
+        __android_log_print(ANDROID_LOG_VERBOSE, "SDLActivity", "returning from onNativeSurfaceChanged() without doing anything");
         return;
     }
     
