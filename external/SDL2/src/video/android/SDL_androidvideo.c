@@ -58,6 +58,11 @@ extern int Android_GLES_LoadLibrary(_THIS, const char *path);
 #define Android_GLES_GetSwapInterval SDL_EGL_GetSwapInterval
 #define Android_GLES_DeleteContext SDL_EGL_DeleteContext
 
+#include <android/log.h>
+#define LOG_TAG "SDL"
+#define LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+
 /* Android driver bootstrap functions */
 
 
@@ -197,6 +202,7 @@ Android_VideoQuit(_THIS)
 void
 Android_SetScreenResolution(int width, int height, Uint32 format, float rate)
 {
+    LOGI("Android_SetScreenResolution");
     Android_ScreenWidth = width;
     Android_ScreenHeight = height;
     Android_ScreenFormat = format;
@@ -219,6 +225,7 @@ Android_SetScreenResolution(int width, int height, Uint32 format, float rate)
     }
 
     if (Android_Window) {
+        LOGI("Android_SetScreenResolution for Android_window");
         SDL_SendWindowEvent(Android_Window, SDL_WINDOWEVENT_RESIZED, width, height);
 
         /* Force the current mode to match the resize otherwise the SDL_WINDOWEVENT_RESTORED event

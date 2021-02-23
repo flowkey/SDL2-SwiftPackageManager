@@ -168,6 +168,7 @@ JNIEXPORT void JNICALL Java_org_libsdl_app_SDLActivity_onNativeResize(
                                     JNIEnv* env, jclass jcls,
                                     jint width, jint height, jint format, jfloat rate)
 {
+    LOGI("SDLActivity_onNativeResize");
     Android_SetScreenResolution(width, height, format, rate);
 }
 
