@@ -44,6 +44,8 @@ Functions:
 # SDL_DisplayMode
 - Name: SDL_GetCurrentDisplayMode
   SwiftPrivate: true
+- Name: SDL_GetDesktopDisplayMode
+  SwiftPrivate: true
 
 Tags:
 - Name: SDL_Color
