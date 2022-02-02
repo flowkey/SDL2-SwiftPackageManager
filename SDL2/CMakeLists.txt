@@ -30,20 +30,23 @@ file(GLOB SDL2_SOURCES
     src/atomic/SDL_spinlock.c
 
     src/sensor/*.c
+    src/sensor/android/*.c
     src/joystick/hidapi/*.c
     src/audio/aaudio/*.c
     src/video/yuv2rgb/*.c
     src/audio/openslES/*.c
     src/haptic/android/*.c:
-
     src/haptic/android/SDL_syshaptic.c
     src/joystick/virtual/*.c
+    src/hidapi/*.c
+    src/hidapi/android/*.cpp
+    src/locale/*.c
+    src/misc/*.c
+    src/misc/dummy/*.c
+    src/locale/android/*.c
 )
 
 add_library(SDL SHARED ${SDL2_SOURCES})
-
-set(DYNAPI_NEEDS_DLOPEN 0)
-set(SDL_JOYSTICK 0)
 
 include_directories(SDL PUBLIC include)
 target_link_libraries(SDL PRIVATE dl GLESv1_CM GLESv2 OpenSLES log android)
