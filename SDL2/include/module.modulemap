@@ -1,0 +1,5 @@
+module SDL [system] {
+    header "SDL.h"
+    header "SDL_syswm.h"
+    export *
+}
