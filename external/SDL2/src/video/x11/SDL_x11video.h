@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,8 +20,8 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef _SDL_x11video_h
-#define _SDL_x11video_h
+#ifndef SDL_x11video_h_
+#define SDL_x11video_h_
 
 #include "SDL_keycode.h"
 
@@ -68,12 +68,14 @@
 #include "SDL_x11mouse.h"
 #include "SDL_x11opengl.h"
 #include "SDL_x11window.h"
+#include "SDL_x11vulkan.h"
 
 /* Private display data */
 
 typedef struct SDL_VideoData
 {
     Display *display;
+    Display *request_display;
     char *classname;
     pid_t pid;
     XIM im;
@@ -82,6 +84,10 @@ typedef struct SDL_VideoData
     SDL_WindowData **windowlist;
     int windowlistlength;
     XID window_group;
+    Window clipboard_window;
+#if SDL_VIDEO_DRIVER_X11_XFIXES
+    SDL_Window *active_cursor_confined_window;
+#endif /* SDL_VIDEO_DRIVER_X11_XFIXES */
 
     /* This is true for ICCCM2.0-compliant window managers */
     SDL_bool net_wm;
@@ -90,6 +96,7 @@ typedef struct SDL_VideoData
     Atom WM_PROTOCOLS;
     Atom WM_DELETE_WINDOW;
     Atom WM_TAKE_FOCUS;
+    Atom WM_NAME;
     Atom _NET_WM_STATE;
     Atom _NET_WM_STATE_HIDDEN;
     Atom _NET_WM_STATE_FOCUSED;
@@ -109,6 +116,7 @@ typedef struct SDL_VideoData
     Atom _NET_WM_USER_TIME;
     Atom _NET_ACTIVE_WINDOW;
     Atom _NET_FRAME_EXTENTS;
+    Atom _SDL_WAKEUP;
     Atom UTF8_STRING;
     Atom PRIMARY;
     Atom XdndEnter;
@@ -124,6 +132,8 @@ typedef struct SDL_VideoData
     SDL_Scancode key_layout[256];
     SDL_bool selection_waiting;
 
+    SDL_bool broken_pointer_grab;  /* true if XGrabPointer seems unreliable. */
+
     Uint32 last_mode_change_deadline;
 
     SDL_bool global_mouse_changed;
@@ -133,10 +143,21 @@ typedef struct SDL_VideoData
 #if SDL_VIDEO_DRIVER_X11_HAS_XKBKEYCODETOKEYSYM
     XkbDescPtr xkb;
 #endif
+    int xkb_event;
+
+    KeyCode filter_code;
+    Time    filter_time;
+
+#if SDL_VIDEO_VULKAN
+    /* Vulkan variables only valid if _this->vulkan_config.loader_handle is not NULL */
+    void *vulkan_xlib_xcb_library;
+    PFN_XGetXCBConnection vulkan_XGetXCBConnection;
+#endif
+
 } SDL_VideoData;
 
 extern SDL_bool X11_UseDirectColorVisuals(void);
 
-#endif /* _SDL_x11video_h */
+#endif /* SDL_x11video_h_ */
 
 /* vi: set ts=4 sw=4 expandtab: */

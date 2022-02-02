@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -24,23 +24,38 @@
 
 #include "SDL_windows.h"
 #include "SDL_error.h"
-#include "SDL_assert.h"
 
 #include <objbase.h>  /* for CoInitialize/CoUninitialize (Win32 only) */
 
 #ifndef _WIN32_WINNT_VISTA
 #define _WIN32_WINNT_VISTA  0x0600
 #endif
+#ifndef _WIN32_WINNT_WIN7
+#define _WIN32_WINNT_WIN7   0x0601
+#endif
+#ifndef _WIN32_WINNT_WIN8
+#define _WIN32_WINNT_WIN8   0x0602
+#endif
 
 
-/* Sets an error message based on GetLastError() */
+/* Sets an error message based on an HRESULT */
 int
 WIN_SetErrorFromHRESULT(const char *prefix, HRESULT hr)
 {
     TCHAR buffer[1024];
     char *message;
-    FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, hr, 0,
+    TCHAR *p = buffer;
+    DWORD c = FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, hr, 0,
                   buffer, SDL_arraysize(buffer), NULL);
+    buffer[c] = 0;
+    /* kill CR/LF that FormatMessage() sticks at the end */
+    while (*p) {
+        if (*p == '\r') {
+            *p = 0;
+            break;
+        }
+        ++p;
+    }
     message = WIN_StringToUTF8(buffer);
     SDL_SetError("%s%s%s", prefix ? prefix : "", prefix ? ": " : "", message);
     SDL_free(message);
@@ -115,12 +130,30 @@ IsWindowsVersionOrGreater(WORD wMajorVersion, WORD wMinorVersion, WORD wServiceP
 }
 #endif
 
-BOOL WIN_IsWindowsVistaOrGreater()
+BOOL WIN_IsWindowsVistaOrGreater(void)
 {
 #ifdef __WINRT__
     return TRUE;
 #else
     return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_VISTA), LOBYTE(_WIN32_WINNT_VISTA), 0);
+#endif
+}
+
+BOOL WIN_IsWindows7OrGreater(void)
+{
+#ifdef __WINRT__
+    return TRUE;
+#else
+    return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN7), LOBYTE(_WIN32_WINNT_WIN7), 0);
+#endif
+}
+
+BOOL WIN_IsWindows8OrGreater(void)
+{
+#ifdef __WINRT__
+    return TRUE;
+#else
+    return IsWindowsVersionOrGreater(HIBYTE(_WIN32_WINNT_WIN8), LOBYTE(_WIN32_WINNT_WIN8), 0);
 #endif
 }
 
@@ -142,6 +175,8 @@ Registry, and a unhelpful "Microphone(Yeti Stereo Microph" in winmm. Sigh.
 
 (Also, DirectSound shouldn't be limited to 32 chars, but its device enum
 has the same problem.)
+
+WASAPI doesn't need this. This is just for DirectSound/WinMM.
 */
 char *
 WIN_LookupAudioDeviceName(const WCHAR *name, const GUID *guid)
@@ -158,7 +193,7 @@ WIN_LookupAudioDeviceName(const WCHAR *name, const GUID *guid)
     DWORD len = 0;
     char *retval = NULL;
 
-    if (SDL_memcmp(guid, &nullguid, sizeof (*guid)) == 0) {
+    if (WIN_IsEqualGUID(guid, &nullguid)) {
         return WIN_StringToUTF8(name);  /* No GUID, go with what we've got. */
     }
 
@@ -200,6 +235,36 @@ WIN_LookupAudioDeviceName(const WCHAR *name, const GUID *guid)
     SDL_free(strw);
     return retval ? retval : WIN_StringToUTF8(name);
 #endif /* if __WINRT__ / else */
+}
+
+BOOL
+WIN_IsEqualGUID(const GUID * a, const GUID * b)
+{
+    return (SDL_memcmp(a, b, sizeof (*a)) == 0);
+}
+
+BOOL
+WIN_IsEqualIID(REFIID a, REFIID b)
+{
+    return (SDL_memcmp(a, b, sizeof (*a)) == 0);
+}
+
+void
+WIN_RECTToRect(const RECT *winrect, SDL_Rect *sdlrect)
+{
+    sdlrect->x = winrect->left;
+    sdlrect->w = (winrect->right - winrect->left) + 1;
+    sdlrect->y = winrect->top;
+    sdlrect->h = (winrect->bottom - winrect->top) + 1;
+}
+
+void
+WIN_RectToRECT(const SDL_Rect *sdlrect, RECT *winrect)
+{
+    winrect->left = sdlrect->x;
+    winrect->right = sdlrect->x + sdlrect->w - 1;
+    winrect->top = sdlrect->y;
+    winrect->bottom = sdlrect->y + sdlrect->h - 1;
 }
 
 #endif /* __WIN32__ || __WINRT__ */

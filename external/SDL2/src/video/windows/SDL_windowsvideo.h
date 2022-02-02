@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,8 +20,8 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef _SDL_windowsvideo_h
-#define _SDL_windowsvideo_h
+#ifndef SDL_windowsvideo_h_
+#define SDL_windowsvideo_h_
 
 #include "../../core/windows/SDL_windows.h"
 
@@ -85,6 +85,8 @@ typedef enum MONITOR_DPI_TYPE {
     MDT_DEFAULT = MDT_EFFECTIVE_DPI
 } MONITOR_DPI_TYPE;
 
+#else
+#include <shellscalingapi.h>
 #endif /* WINVER < 0x0603 */
 
 typedef BOOL  (*PFNSHFullScreen)(HWND, DWORD);
@@ -186,6 +188,9 @@ typedef struct SDL_VideoData
     DWORD ime_convmodesinkcookie;
     TSFSink *ime_uielemsink;
     TSFSink *ime_ippasink;
+
+    BYTE pre_hook_key_state[256];
+    UINT _SDL_WAKEUP;
 } SDL_VideoData;
 
 extern SDL_bool g_WindowsEnableMessageLoop;
@@ -194,6 +199,6 @@ extern SDL_bool g_WindowFrameUsableWhileCursorHidden;
 typedef struct IDirect3D9 IDirect3D9;
 extern SDL_bool D3D_LoadDLL( void **pD3DDLL, IDirect3D9 **pDirect3D9Interface );
 
-#endif /* _SDL_windowsvideo_h */
+#endif /* SDL_windowsvideo_h_ */
 
 /* vi: set ts=4 sw=4 expandtab: */

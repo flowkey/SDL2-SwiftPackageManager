@@ -1,0 +1,1 @@
+../../external/SDL2/include/SDL_config_os2.h

@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -43,13 +43,13 @@ SDL_sem *SDL_CreateSemaphore(Uint32 initial_value)
 {
     SDL_sem *sem;
 
-    sem = (SDL_sem *) malloc(sizeof(*sem));
+    sem = (SDL_sem *) SDL_malloc(sizeof(*sem));
     if (sem != NULL) {
         /* TODO: Figure out the limit on the maximum value. */
         sem->semid = sceKernelCreateSema("SDL sema", 0, initial_value, 255, NULL);
         if (sem->semid < 0) {
             SDL_SetError("Couldn't create semaphore");
-            free(sem);
+            SDL_free(sem);
             sem = NULL;
         }
     } else {
@@ -68,7 +68,7 @@ void SDL_DestroySemaphore(SDL_sem *sem)
             sem->semid = 0;
         }
 
-        free(sem);
+        SDL_free(sem);
     }
 }
 
@@ -108,7 +108,7 @@ int SDL_SemWaitTimeout(SDL_sem *sem, Uint32 timeout)
                case SCE_KERNEL_ERROR_WAIT_TIMEOUT:
                        return SDL_MUTEX_TIMEDOUT;
                default:
-                       return SDL_SetError("WaitForSingleObject() failed");
+                       return SDL_SetError("sceKernelWaitSema() failed");
     }
 }
 

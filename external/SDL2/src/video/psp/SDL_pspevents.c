@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -34,6 +34,7 @@
 #include "SDL_keyboard.h"
 #include "../../thread/SDL_systhread.h"
 #include <psphprm.h>
+#include <pspthreadman.h>
 
 #ifdef PSPIRKEYB
 #include <pspirkeyb.h>
@@ -260,12 +261,12 @@ void PSP_EventInit(_THIS)
 #endif
     /* Start thread to read data */
     if((event_sem =  SDL_CreateSemaphore(1)) == NULL) {
-        SDL_SetError("Can't create input semaphore\n");
+        SDL_SetError("Can't create input semaphore");
         return;
     }
     running = 1;
     if((thread = SDL_CreateThreadInternal(EventUpdate, "PSPInputThread", 4096, NULL)) == NULL) {
-        SDL_SetError("Can't create input thread\n");
+        SDL_SetError("Can't create input thread");
         return;
     }
 }

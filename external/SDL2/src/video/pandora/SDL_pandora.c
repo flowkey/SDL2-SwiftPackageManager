@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -102,8 +102,8 @@ PND_create()
     device->VideoQuit = PND_videoquit;
     device->GetDisplayModes = PND_getdisplaymodes;
     device->SetDisplayMode = PND_setdisplaymode;
-    device->CreateWindow = PND_createwindow;
-    device->CreateWindowFrom = PND_createwindowfrom;
+    device->CreateSDLWindow = PND_createwindow;
+    device->CreateSDLWindowFrom = PND_createwindowfrom;
     device->SetWindowTitle = PND_setwindowtitle;
     device->SetWindowIcon = PND_setwindowicon;
     device->SetWindowPosition = PND_setwindowposition;
@@ -114,9 +114,10 @@ PND_create()
     device->MaximizeWindow = PND_maximizewindow;
     device->MinimizeWindow = PND_minimizewindow;
     device->RestoreWindow = PND_restorewindow;
-    device->SetWindowGrab = PND_setwindowgrab;
     device->DestroyWindow = PND_destroywindow;
+#if 0
     device->GetWindowWMInfo = PND_getwindowwminfo;
+#endif
     device->GL_LoadLibrary = PND_gl_loadlibrary;
     device->GL_GetProcAddress = PND_gl_getprocaddres;
     device->GL_UnloadLibrary = PND_gl_unloadlibrary;
@@ -171,7 +172,7 @@ PND_videoinit(_THIS)
     display.current_mode = current_mode;
     display.driverdata = NULL;
 
-    SDL_AddVideoDisplay(&display);
+    SDL_AddVideoDisplay(&display, SDL_FALSE);
 
     return 1;
 }
@@ -285,10 +286,6 @@ PND_restorewindow(_THIS, SDL_Window * window)
 {
 }
 void
-PND_setwindowgrab(_THIS, SDL_Window * window, SDL_bool grabbed)
-{
-}
-void
 PND_destroywindow(_THIS, SDL_Window * window)
 {
     SDL_VideoData *phdata = (SDL_VideoData *) _this->driverdata;
@@ -298,13 +295,14 @@ PND_destroywindow(_THIS, SDL_Window * window)
 /*****************************************************************************/
 /* SDL Window Manager function                                               */
 /*****************************************************************************/
+#if 0
 SDL_bool
 PND_getwindowwminfo(_THIS, SDL_Window * window, struct SDL_SysWMinfo *info)
 {
     if (info->version.major <= SDL_MAJOR_VERSION) {
         return SDL_TRUE;
     } else {
-        SDL_SetError("application not compiled with SDL %d.%d\n",
+        SDL_SetError("application not compiled with SDL %d.%d",
                      SDL_MAJOR_VERSION, SDL_MINOR_VERSION);
         return SDL_FALSE;
     }
@@ -312,6 +310,7 @@ PND_getwindowwminfo(_THIS, SDL_Window * window, struct SDL_SysWMinfo *info)
     /* Failed to get window manager information */
     return SDL_FALSE;
 }
+#endif
 
 /*****************************************************************************/
 /* SDL OpenGL/OpenGL ES functions                                            */
@@ -613,7 +612,7 @@ PND_gl_createcontext(_THIS, SDL_Window * window)
 
 #ifdef WIZ_GLES_LITE
     if( !hNativeWnd ) {
-    hNativeWnd = (NativeWindowType)malloc(16*1024);
+    hNativeWnd = (NativeWindowType)SDL_malloc(16*1024);
 
     if(!hNativeWnd)
         printf( "Error: Wiz framebuffer allocatation failed\n" );
@@ -637,7 +636,7 @@ PND_gl_createcontext(_THIS, SDL_Window * window)
 
 
     if (wdata->gles_surface == 0) {
-        SDL_SetError("Error : eglCreateWindowSurface failed;\n");
+        SDL_SetError("Error : eglCreateWindowSurface failed;");
         return NULL;
     }
 
@@ -774,15 +773,14 @@ PND_gl_getswapinterval(_THIS)
     return ((SDL_VideoData *) _this->driverdata)->swapinterval;
 }
 
-void
+int
 PND_gl_swapwindow(_THIS, SDL_Window * window)
 {
     SDL_VideoData *phdata = (SDL_VideoData *) _this->driverdata;
     SDL_WindowData *wdata = (SDL_WindowData *) window->driverdata;
 
     if (phdata->egl_initialized != SDL_TRUE) {
-        SDL_SetError("PND: GLES initialization failed, no OpenGL ES support");
-        return;
+        return SDL_SetError("PND: GLES initialization failed, no OpenGL ES support");
     }
 
     /* Many applications do not uses glFinish(), so we call it for them */
@@ -792,6 +790,7 @@ PND_gl_swapwindow(_THIS, SDL_Window * window)
     eglWaitGL();
 
     eglSwapBuffers(phdata->egl_display, wdata->gles_surface);
+    return 0;
 }
 
 void
@@ -820,7 +819,7 @@ PND_gl_deletecontext(_THIS, SDL_GLContext context)
 #ifdef WIZ_GLES_LITE
     if( hNativeWnd != 0 )
     {
-      free(hNativeWnd);
+      SDL_free(hNativeWnd);
       hNativeWnd = 0;
       printf( "SDL: Wiz framebuffer released\n" );
     }

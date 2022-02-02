@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2016 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -20,8 +20,8 @@
 */
 #include "../../SDL_internal.h"
 
-#ifndef _SDL_x11dyn_h
-#define _SDL_x11dyn_h
+#ifndef SDL_x11dyn_h_
+#define SDL_x11dyn_h_
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -39,7 +39,6 @@
 
 #include <X11/Xproto.h>
 #include <X11/extensions/Xext.h>
-#include <X11/extensions/extutil.h>
 
 #ifndef NO_SHARED_MEMORY
 #include <sys/ipc.h>
@@ -58,6 +57,9 @@
 #endif
 #if SDL_VIDEO_DRIVER_X11_XINPUT2
 #include <X11/extensions/XInput2.h>
+#endif
+#if SDL_VIDEO_DRIVER_X11_XFIXES
+#include <X11/extensions/Xfixes.h>
 #endif
 #if SDL_VIDEO_DRIVER_X11_XRANDR
 #include <X11/extensions/Xrandr.h>
@@ -107,5 +109,5 @@ extern SDL_DYNX11FN_XGetICValues X11_XGetICValues;
 }
 #endif
 
-#endif                          /* !defined _SDL_x11dyn_h */
+#endif                          /* !defined SDL_x11dyn_h_ */
 /* vi: set ts=4 sw=4 expandtab: */
