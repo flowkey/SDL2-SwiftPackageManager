@@ -38,7 +38,6 @@
 #include "../../video/android/SDL_androidwindow.h"
 #include "../../joystick/android/SDL_sysjoystick_c.h"
 
-#include <android/log.h>
 #include <pthread.h>
 #include <sys/types.h>
 #include <unistd.h>

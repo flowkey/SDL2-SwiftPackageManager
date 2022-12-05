@@ -26,6 +26,10 @@
 #include "../core/windows/SDL_windows.h"
 #endif
 
+#if __ANDROID__
+#include <android/native_window_jni.h>
+#endif
+
 #include "SDL_sysvideo.h"
 #include "SDL_egl_c.h"
 #include "SDL_loadso.h"
