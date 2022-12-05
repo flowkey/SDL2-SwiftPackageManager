@@ -1417,4 +1417,3 @@ jclass Android_JNI_GetActivityClass(void)
 #endif /* __ANDROID__ */
 
 /* vi: set ts=4 sw=4 expandtab: */
-

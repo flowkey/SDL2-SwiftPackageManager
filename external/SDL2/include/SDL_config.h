@@ -48,8 +48,8 @@
 #include "SDL_config_minimal.h"
 #endif /* platform config */
 
-#ifdef USING_GENERATED_CONFIG_H
-#error Wrong SDL_config.h, check your include path?
-#endif
+// #ifdef USING_GENERATED_CONFIG_H
+// #error Wrong SDL_config.h, check your include path?
+// #endif
 
 #endif /* _SDL_config_h */
