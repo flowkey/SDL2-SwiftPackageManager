@@ -17,7 +17,7 @@ let sdlCommon = Target.target(
         "src/audio/SDL_audiotypecvt.c",
         "src/audio/SDL_mixer.c",
         "src/audio/SDL_wave.c",
-        "src/cpuinfo/SDL_cpuinfo.c", // FIXME?
+        "src/cpuinfo/SDL_cpuinfo.c",
         "src/dynapi/SDL_dynapi.c",
         "src/events/SDL_clipboardevents.c",
         "src/events/SDL_dropevents.c",
@@ -129,13 +129,8 @@ let sdlMacOS: Target = .target(
         "src/file/cocoa/SDL_rwopsbundlesupport.m",
         "src/filesystem/cocoa/SDL_sysfilesystem.m",
         "src/haptic/darwin/SDL_syshaptic.c",
-        "src/joystick/darwin/SDL_iokitjoystick.c",
-        "src/joystick/iphoneos/SDL_mfijoystick.m",
         "src/libm/e_atan2.c",
-        "src/libm/e_exp.c",
-        "src/libm/e_fmod.c",
         "src/libm/e_log.c",
-        "src/libm/e_log10.c",
         "src/libm/e_pow.c",
         "src/libm/e_rem_pio2.c",
         "src/libm/e_sqrt.c",
@@ -151,32 +146,20 @@ let sdlMacOS: Target = .target(
         "src/libm/s_scalbn.c",
         "src/libm/s_sin.c",
         "src/libm/s_tan.c",
-        "src/locale/macosx/SDL_syslocale.m",
-        "src/misc/macosx/SDL_sysurl.m",
         "src/power/macosx/SDL_syspower.c",
-        "src/render/metal/SDL_render_metal.m",
-        "src/sensor/dummy/SDL_dummysensor.c",
         "src/video/cocoa/SDL_cocoaclipboard.m",
         "src/video/cocoa/SDL_cocoaevents.m",
         "src/video/cocoa/SDL_cocoakeyboard.m",
         "src/video/cocoa/SDL_cocoamessagebox.m",
-        "src/video/cocoa/SDL_cocoametalview.m",
         "src/video/cocoa/SDL_cocoamodes.m",
         "src/video/cocoa/SDL_cocoamouse.m",
         "src/video/cocoa/SDL_cocoaopengl.m",
-        "src/video/cocoa/SDL_cocoaopengles.m",
         "src/video/cocoa/SDL_cocoashape.m",
         "src/video/cocoa/SDL_cocoavideo.m",
-        "src/video/cocoa/SDL_cocoavulkan.m",
         "src/video/cocoa/SDL_cocoawindow.m",
         "src/video/dummy/SDL_nullevents.c",
         "src/video/dummy/SDL_nullframebuffer.c",
-        "src/video/dummy/SDL_nullvideo.c",
-        "src/video/offscreen/SDL_offscreenevents.c",
-        "src/video/offscreen/SDL_offscreenframebuffer.c",
-        "src/video/offscreen/SDL_offscreenopengles.c",
-        "src/video/offscreen/SDL_offscreenvideo.c",
-        "src/video/offscreen/SDL_offscreenwindow.c",
+        "src/video/dummy/SDL_nullvideo.c"
     ],
     cSettings: [
         .define("SDL2_EXPORTS"),
@@ -189,7 +172,8 @@ let package = Package(
     name: "SDL",
     platforms: [.macOS(.v10_15)],
     products: [
-        .library(name: "SDL_Android", targets: ["SDL_Android", "SDL_ttf", "SDL_gpu"])
+        .library(name: "SDL_Android", targets: ["SDL_Android", "SDL_ttf", "SDL_gpu"]),
+        .library(name: "SDL_macOS", targets: ["SDL_macOS", "SDL_ttf", "SDL_gpu"])
     ],
     targets: [
         sdlCommon,
@@ -198,7 +182,7 @@ let package = Package(
         .target(
             name: "SDL_ttf",
             dependencies: [
-                // .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
+                .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
                 .target(name: "SDL_Android", condition: .when(platforms: [.android])),
             ],
             path: "SDL_ttf",
@@ -255,7 +239,7 @@ let package = Package(
             name: "SDL_gpu",
             dependencies: [
                 .target(name: "Cstb_image"),
-                // .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
+                .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
                 .target(name: "SDL_Android", condition: .when(platforms: [.android])),
             ],
             path: "sdl-gpu",
@@ -274,6 +258,7 @@ let package = Package(
                 "renderer_OpenGL_4.c",
             ],
             cSettings: [
+                .headerSearchPath("externals/glew/GL", .when(platforms: [.macOS])),
                 .define("GL_GLEXT_PROTOTYPES", .when(platforms: [.android])),
                 .define("SDL_GPU_DISABLE_GLES", .when(platforms: [.macOS])),
                 .define("SDL_GPU_DISABLE_OPENGL", .when(platforms: [.android])),
@@ -287,9 +272,6 @@ let package = Package(
                 .linkedFramework("OpenGL", .when(platforms: [.macOS])),
             ]
         ),
-        .target(
-            name: "Cstb_image",
-            path: "stb_image"
-        )
+        .target(name: "Cstb_image", path: "stb_image")
     ]
 )
