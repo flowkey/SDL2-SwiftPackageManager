@@ -78,6 +78,7 @@ int Android_JNI_GetTouchDeviceIds(int **ids);
 JNIEnv *Android_JNI_GetEnv(void);
 int Android_JNI_SetupThread(void);
 jclass Android_JNI_GetActivityClass(void);
+JNIEXPORT jint JNICALL SDLJNI_OnLoad(JavaVM * _Nonnull vm, void * _Nullable reserved);
 
 /* Generic messages */
 int Android_JNI_SendMessage(int command, int param);

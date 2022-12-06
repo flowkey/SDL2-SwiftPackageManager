@@ -80,7 +80,7 @@ static SDL_bool bHasNewData;
 *******************************************************************************/
 
 /* Library init */
-JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved)
+JNIEXPORT jint JNICALL SDLJNI_OnLoad(JavaVM* vm, void* reserved)
 {
     JNIEnv *env;
     mJavaVM = vm;
@@ -100,6 +100,14 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved)
 
     return JNI_VERSION_1_4;
 }
+
+// Consumers of a static library build must call SDLJNI_OnLoad themselves
+#if !STATIC_SWIFT_STDLIB
+JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved)
+{
+    return SDLJNI_OnLoad(vm, reserved);
+}
+#endif
 
 /* Called before SDL_main() to initialize JNI bindings */
 JNIEXPORT void JNICALL SDL_Android_Init(JNIEnv* mEnv, jobject obj)
