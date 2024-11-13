@@ -22,23 +22,6 @@
 #ifndef _SDL_dynapi_h
 #define _SDL_dynapi_h
 
-/* IMPORTANT:
-   This is the master switch to disabling the dynamic API. We made it so you
-   have to hand-edit an internal source file in SDL to turn it off; you
-   can do it if you want it badly enough, but hopefully you won't want to.
-   You should understand the ramifications of turning this off: it makes it
-   hard to update your SDL in the field, and impossible if you've statically
-   linked SDL into your app. Understand that platforms change, and if we can't
-   drop in an updated SDL, your application can definitely break some time
-   in the future, even if it's fine today.
-   To be sure, as new system-level video and audio APIs are introduced, an
-   updated SDL can transparently take advantage of them, but your program will
-   not without this feature. Think hard before turning it off.
-*/
-#ifdef SDL_DYNAMIC_API  /* Tried to force it on the command line? */
-#error Nope, you have to edit this file to force this off.
-#endif
-
 #ifdef __APPLE__
 #include "TargetConditionals.h"
 #endif

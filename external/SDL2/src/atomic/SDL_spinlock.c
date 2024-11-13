@@ -32,6 +32,10 @@
 #include <atomic.h>
 #endif
 
+#if !defined(HAVE_GCC_ATOMICS) && defined(__MACOSX__)
+#include <libkern/OSAtomic.h>
+#endif
+
 /* This function is where all the magic happens... */
 SDL_bool
 SDL_AtomicTryLock(SDL_SpinLock *lock)

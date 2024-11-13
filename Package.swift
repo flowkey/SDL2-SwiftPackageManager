@@ -5,7 +5,17 @@ import PackageDescription
 // SwiftPM complains if two targets try to build the same files,
 // so we use this target to build all the common files separately.
 let sdlCommon = Target.target(
-    name: "SDL_common",
+    name: "SDL",
+    dependencies: [
+        .target(
+            name: "SDL_macOS",
+            condition: .when(platforms: [.macOS])
+        ),
+        .target(
+            name: "SDL_Android",
+            condition: .when(platforms: [.android])
+        )
+    ],
     path: "SDL2",
     sources: [
         "src/atomic/SDL_atomic.c",
@@ -83,13 +93,13 @@ let sdlCommon = Target.target(
         .define("_THREAD_SAFE"),
         .define("SDL_BUILD_MAJOR_VERSION", to: "2"),
         .define("SDL_BUILD_MINOR_VERSION", to: "0"),
-        .define("SDL_BUILD_MICRO_VERSION", to: "9")
+        .define("SDL_BUILD_MICRO_VERSION", to: "9"),
+        .define("SDL_DYNAMIC_API", to: "0")
     ]
 )
 
 let sdlAndroid: Target = .target(
     name: "SDL_Android",
-    dependencies: ["SDL_common"],
     path: "SDL2",
     sources: [
         // extracted from SDL2/Android.mk
@@ -110,17 +120,17 @@ let sdlAndroid: Target = .target(
     ],
     cSettings: [
         .define("SDL2_EXPORTS"),
-        .define("GL_GLEXT_PROTOTYPES")
+        .define("GL_GLEXT_PROTOTYPES"),
+        .define("SDL_DYNAMIC_API", to: "0")
     ],
     linkerSettings: [
-        .linkedLibrary("android"),
-        .linkedLibrary("log"),
+       .linkedLibrary("android", .when(platforms: [.android])),
+       .linkedLibrary("log", .when(platforms: [.android])),
     ]
 )
 
 let sdlMacOS: Target = .target(
     name: "SDL_macOS",
-    dependencies: ["SDL_common"],
     path: "SDL2",
     sources: [
         // created by calling "cmake -G Ninja SDL2" and getting the files needed for a static build from the ninja build file
@@ -129,6 +139,7 @@ let sdlMacOS: Target = .target(
         "src/file/cocoa/SDL_rwopsbundlesupport.m",
         "src/filesystem/cocoa/SDL_sysfilesystem.m",
         "src/haptic/darwin/SDL_syshaptic.c",
+        "src/joystick/darwin/SDL_sysjoystick.c",
         "src/libm/e_atan2.c",
         "src/libm/e_log.c",
         "src/libm/e_pow.c",
@@ -153,6 +164,7 @@ let sdlMacOS: Target = .target(
         "src/video/cocoa/SDL_cocoamessagebox.m",
         "src/video/cocoa/SDL_cocoamodes.m",
         "src/video/cocoa/SDL_cocoamouse.m",
+        "src/video/cocoa/SDL_cocoamousetap.m",
         "src/video/cocoa/SDL_cocoaopengl.m",
         "src/video/cocoa/SDL_cocoashape.m",
         "src/video/cocoa/SDL_cocoavideo.m",
@@ -163,8 +175,19 @@ let sdlMacOS: Target = .target(
     ],
     cSettings: [
         .define("SDL2_EXPORTS"),
+        .define("SDL_DYNAMIC_API", to: "0"),
         .define("USING_GENERATED_CONFIG_H"),
-        .define("_THREAD_SAFE")
+        .define("_THREAD_SAFE"),
+        .unsafeFlags(["-fno-objc-arc"])
+    ],
+    linkerSettings: [
+        .linkedFramework("AudioToolbox", .when(platforms: [.macOS])),
+        .linkedFramework("Carbon", .when(platforms: [.macOS])),
+        .linkedFramework("Cocoa", .when(platforms: [.macOS])),
+        .linkedFramework("CoreAudio", .when(platforms: [.macOS])),
+        .linkedFramework("CoreVideo", .when(platforms: [.macOS])),
+        .linkedFramework("ForceFeedback", .when(platforms: [.macOS])),
+        .linkedFramework("IOKit", .when(platforms: [.macOS])),
     ]
 )
 
@@ -172,8 +195,7 @@ let package = Package(
     name: "SDL",
     platforms: [.macOS(.v10_15)],
     products: [
-        .library(name: "SDL_Android", targets: ["SDL_Android", "SDL_ttf", "SDL_gpu"]),
-        .library(name: "SDL_macOS", targets: ["SDL_macOS", "SDL_ttf", "SDL_gpu"])
+        .library(name: "SDL", targets: ["SDL", "SDL_ttf", "SDL_gpu"]),
     ],
     targets: [
         sdlCommon,
@@ -181,10 +203,7 @@ let package = Package(
         sdlMacOS,
         .target(
             name: "SDL_ttf",
-            dependencies: [
-                .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
-                .target(name: "SDL_Android", condition: .when(platforms: [.android])),
-            ],
+            dependencies: ["SDL"],
             path: "SDL_ttf",
             sources: [
                 "SDL_ttf.c",
@@ -232,15 +251,19 @@ let package = Package(
                 "external/freetype-2.9.1/src/base/ftdebug.c",
             ],
             cSettings: [
-                .define("FT2_BUILD_LIBRARY")
+                .define("FT2_BUILD_LIBRARY"),
+                .define("FT_CONFIG_OPTION_SYSTEM_ZLIB")
+            ],
+            linkerSettings: [
+                .linkedLibrary("z")
             ]
         ),
         .target(
             name: "SDL_gpu",
             dependencies: [
                 .target(name: "Cstb_image"),
-                .target(name: "SDL_macOS", condition: .when(platforms: [.macOS])),
-                .target(name: "SDL_Android", condition: .when(platforms: [.android])),
+                .target(name: "SDL"),
+                .target(name: "Cglew", condition: .when(platforms: [.macOS]))
             ],
             path: "sdl-gpu",
             sources: [
@@ -264,14 +287,29 @@ let package = Package(
                 .define("SDL_GPU_DISABLE_OPENGL", .when(platforms: [.android])),
                 .define("SDL_GPU_DISABLE_OPENGL_1"),
                 .define("SDL_GPU_DISABLE_OPENGL_2"),
+                .define("SDL_GPU_DISABLE_OPENGL_3"),
                 .define("SDL_GPU_DISABLE_GLES_1"),
                 .define("SDL_GPU_DISABLE_GLES_2"),
+                .define("GLEW_NO_GLU", .when(platforms: [.macOS])),
+                .define("GLEW_NO_GLEXT", .when(platforms: [.macOS])),
+                .define("SDL_DYNAMIC_API", to: "0")
             ],
             linkerSettings: [
-                .linkedLibrary("GLESv3"),
+                .linkedLibrary("GLESv3", .when(platforms: [.android])),
                 .linkedFramework("OpenGL", .when(platforms: [.macOS])),
             ]
         ),
-        .target(name: "Cstb_image", path: "stb_image")
+        .target(name: "Cstb_image", path: "stb_image"),
+        .target(
+            name: "Cglew",
+            path: "sdl-gpu/externals/glew",
+            cSettings: [
+                .define("__glxew_h__"), // don't import this header
+                .define("__wglew_h__"), // don't import this header
+                .define("GLEW_STATIC"),
+                .define("GLEW_NO_GLU"),
+                .define("GLEW_NO_GLEXT"),
+            ]
+        )
     ]
 )
