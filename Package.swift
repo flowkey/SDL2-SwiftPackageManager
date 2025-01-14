@@ -271,27 +271,27 @@ let package = Package(
                 "SDL_gpu_matrix.c",
                 "SDL_gpu_renderer.c",
                 "SDL_gpu_shapes.c",
-                "renderer_GLES_1.c",
-                "renderer_GLES_2.c",
-                "renderer_GLES_3.c",
                 "renderer_OpenGL_1_BASE.c",
                 "renderer_OpenGL_1.c",
                 "renderer_OpenGL_2.c",
                 "renderer_OpenGL_3.c",
                 "renderer_OpenGL_4.c",
+                "renderer_GLES_1.c",
+                "renderer_GLES_2.c",
+                "renderer_GLES_3.c",
             ],
             cSettings: [
                 .headerSearchPath("externals/glew/GL", .when(platforms: [.macOS])),
                 .define("GL_GLEXT_PROTOTYPES", .when(platforms: [.android])),
                 .define("SDL_GPU_DISABLE_GLES", .when(platforms: [.macOS])),
+                .define("GLEW_STATIC", .when(platforms: [.macOS])),
+                .define("GLEW_NO_GLU", .when(platforms: [.macOS])),
+                .define("SDL_GPU_USE_BUFFER_RESET", .when(platforms: [.macOS])),
                 .define("SDL_GPU_DISABLE_OPENGL", .when(platforms: [.android])),
                 .define("SDL_GPU_DISABLE_OPENGL_1"),
                 .define("SDL_GPU_DISABLE_OPENGL_2"),
-                .define("SDL_GPU_DISABLE_OPENGL_3"),
                 .define("SDL_GPU_DISABLE_GLES_1"),
                 .define("SDL_GPU_DISABLE_GLES_2"),
-                .define("GLEW_NO_GLU", .when(platforms: [.macOS])),
-                .define("GLEW_NO_GLEXT", .when(platforms: [.macOS])),
                 .define("SDL_DYNAMIC_API", to: "0")
             ],
             linkerSettings: [
@@ -299,16 +299,20 @@ let package = Package(
                 .linkedFramework("OpenGL", .when(platforms: [.macOS])),
             ]
         ),
-        .target(name: "Cstb_image", path: "stb_image"),
+        .target(
+            name: "Cstb_image",
+            path: "stb_image",
+            cSettings: [
+                .define("STBI_FAILURE_USERMSG", .when(platforms: [.macOS])),
+            ]
+        ),
         .target(
             name: "Cglew",
             path: "sdl-gpu/externals/glew",
+            sources: ["glew.c"],
             cSettings: [
-                .define("__glxew_h__"), // don't import this header
-                .define("__wglew_h__"), // don't import this header
                 .define("GLEW_STATIC"),
                 .define("GLEW_NO_GLU"),
-                .define("GLEW_NO_GLEXT"),
             ]
         )
     ]
