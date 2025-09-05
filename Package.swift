@@ -193,7 +193,7 @@ let sdlMacOS: Target = .target(
 
 let package = Package(
     name: "SDL",
-    platforms: [.macOS(.v10_15)],
+    platforms: [.macOS(.v12)],
     products: [
         .library(name: "SDL", targets: ["SDL", "SDL_ttf", "SDL_gpu"]),
     ],
@@ -290,6 +290,7 @@ let package = Package(
                 .define("SDL_GPU_DISABLE_OPENGL", .when(platforms: [.android])),
                 .define("SDL_GPU_DISABLE_OPENGL_1"),
                 .define("SDL_GPU_DISABLE_OPENGL_2"),
+                .define("SDL_GPU_DISABLE_OPENGL_4"),
                 .define("SDL_GPU_DISABLE_GLES_1"),
                 .define("SDL_GPU_DISABLE_GLES_2"),
                 .define("SDL_DYNAMIC_API", to: "0")
